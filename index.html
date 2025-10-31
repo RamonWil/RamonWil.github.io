@@ -166,6 +166,27 @@
         box-shadow: 0 0 14px rgba(0,170,255,.5);
         transform: translateY(-2px);
       }
+      /* Force modern rectangular View My Work button */
+      .button.circled {
+        width: auto !important;
+        height: auto !important;
+        border-radius: 40px !important; /* smooth pill shape */
+        padding: 1.1em 3.2em !important;
+        display: inline-block !important;
+        background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%) !important;
+        color: #0b0e14 !important;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        box-shadow: 0 0 10px rgba(0,170,255,0.4);
+        transition: all 0.25s ease;
+      }
+
+      .button.circled:hover {
+        box-shadow: 0 0 20px rgba(0,170,255,0.7);
+        transform: translateY(-2px);
+      }
+
+
 
     </style>
   </head>
