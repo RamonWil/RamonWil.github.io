@@ -3135,4 +3135,14 @@ input, select, textarea {
 						margin-bottom: 2em;
 					}
 
+					/* === Fix circular buttons so text stays horizontal === */
+			.button.circled {
+			border-radius: 40px !important;   /* rounded rectangle, not a circle */
+			width: auto !important;
+			height: auto !important;
+			padding: 1rem 2.5rem !important;  /* top/bottom | left/right */
+			white-space: nowrap !important;   /* keep text on one line */
+			text-align: center !important;
+			line-height: 1.2 !important;
+			}
 	}
