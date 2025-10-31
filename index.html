@@ -1,157 +1,111 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html>
   <head>
-    <title>Ramon J. Williams | Computer Science & Cybersecurity Student</title>
+    <title>Ramon J. Williams | Cybersecurity Engineer</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <meta name="description" content="Ramon J. Williams — Computer Science & Cybersecurity Student at the University of Kentucky. Projects in AI, security, cloud, and software engineering." />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-
-    <!-- AOS (Animate On Scroll) -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
-
-    <!-- Font Awesome (if your template doesn't already include it) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <!-- AOS (scroll animations) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
 
     <style>
-      /* ---------- Dark Professional Palette Overrides ---------- */
-      :root{
-        --bg-0:#0f1116;      /* page background */
-        --bg-1:#14161c;      /* section alt */
-        --bg-2:#1a1c24;      /* cards */
-        --text-0:#e4e6eb;    /* primary text */
-        --text-dim:#b9bdc9;  /* secondary */
-        --accent:#00aaff;    /* primary accent */
-        --accent-2:#1f8bff;  /* hover accent */
+      /* === Global Dark Theme === */
+      :root {
+        --bg-0:#0f1116;
+        --bg-1:#14161c;
+        --bg-2:#1a1c24;
+        --text-0:#e4e6eb;
+        --accent:#00aaff;
+        --accent-2:#1f8bff;
       }
-
-      body, .homepage {
+      body {
         background: var(--bg-0);
         color: var(--text-0);
-        font-family: "Open Sans", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+        font-family: 'Open Sans', sans-serif;
+      }
+      h1,h2,h3 {
+        font-family: 'Poppins', sans-serif;
+        color: var(--text-0);
       }
 
-      #header {
-        background: linear-gradient(180deg, rgba(10,12,18,0.8) 0%, rgba(10,12,18,0.2) 100%), url('assets/images/overlay.png');
-      }
-
-      #header .inner header h1#logo {
-        font-family: "Poppins", sans-serif;
-        letter-spacing: 0.5px;
-      }
-
-      a, .button {
-        transition: all .25s ease;
-      }
-      a { color: var(--accent); }
-      a:hover { color: var(--accent-2); }
-
-      .button.primary, .button.circled {
-        background: var(--accent);
-        color: #0b0e14 !important;
-        border: none !important;
-        box-shadow: 0 0 0 rgba(0,170,255,0);
-      }
-      .button.primary:hover, .button.circled:hover {
-        background: var(--accent-2);
-        box-shadow: 0 0 14px rgba(0,170,255,.5);
-        transform: translateY(-1px);
-      }
-
-      /* Banner (Hero) */
-      #banner {
-        background: transparent;
-        padding-top: 5rem;
-        padding-bottom: 3rem;
-        text-align: center;
-      }
-      #banner h2 {
-        font-family: "Poppins", sans-serif;
-        font-size: 2.4rem;
-        margin-bottom: .5rem;
-      }
-      #banner p {
-        color: var(--text-dim);
-        margin: .3rem 0;
-      }
-      .typed-wrap {
-        min-height: 28px;
-        display: inline-block;
-        color: var(--accent);
+      /* === View My Work Button === */
+      .viewwork-btn {
+        display: inline-block !important;
+        width: auto !important;
+        height: auto !important;
+        white-space: nowrap !important;
+        padding: 1.2rem 3rem !important;
+        font-size: 1.3rem !important;
         font-weight: 600;
-      }
-
-      /* Section Wrappers */
-      .wrapper.style1 { background: var(--bg-1); }
-      .wrapper.style2 { background: var(--bg-2); }
-
-      /* Featured Project Card */
-      .feature-card {
-        background: var(--bg-2);
-        border-radius: 16px;
-        padding: 2rem;
-        box-shadow: 0 10px 30px rgba(0,0,0,.25);
-      }
-      .feature-card h2 a { color: var(--text-0); text-decoration: none; }
-      .feature-card p { color: var(--text-dim); }
-      .feature-media {
-        width: 100%;
-        height: 240px;
-        border-radius: 12px;
-        background: linear-gradient(135deg, #0b0e14 0%, #111520 100%);
-        display: grid;
-        place-items: center;
-        margin-bottom: 1.25rem;
-        position: relative;
-        overflow: hidden;
-      }
-      .feature-media::after{
-        content:"Upload a project hero image in /assets/images/ai-study-assistant-hero.jpg";
-        color:#6d7381;
-        font-size:.95rem;
-        opacity:.85;
-        padding: 0 1rem;
+        text-transform: uppercase;
+        background: var(--accent) !important;
+        color: #0f1116 !important;
+        border: none !important;
+        border-radius: 50px !important;
+        box-shadow: 0 0 15px rgba(0,170,255,0.4);
+        transition: all 0.3s ease;
         text-align: center;
+        line-height: 1.2 !important;
+        animation: fadeInExpand 1.5s ease forwards;
+      }
+      .viewwork-btn:hover {
+        background: var(--accent-2) !important;
+        box-shadow: 0 0 25px rgba(0,170,255,0.6);
+        transform: translateY(-2px);
+      }
+      #header footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2rem;
       }
 
-      /* What I Do icons */
-      #features .icon {
-        transition: transform .25s ease, text-shadow .25s ease;
-      }
-      #features article:hover .icon {
-        transform: translateY(-3px);
-        text-shadow: 0 0 10px rgba(0,170,255,.35);
+      /* === Button animation === */
+      @keyframes fadeInExpand {
+        0% {opacity: 0; transform: scale(0.8);}
+        100% {opacity: 1; transform: scale(1);}
       }
 
-      /* Footer */
-      #footer {
-        background: #0b0e14;
+      /* === Typing effect === */
+      .typing {
+        color: var(--accent);
+        font-weight: 500;
+        font-family: 'Poppins', sans-serif;
+        min-height: 30px;
       }
 
-      /* Smooth anchor offset for fixed headers (if any) */
-      html { scroll-behavior: smooth; }
-
-      /* Responsive tweaks */
-      @media (max-width: 736px) {
-        #banner h2 { font-size: 1.9rem; }
+      /* === Intro Overlay === */
+      #intro-overlay {
+        position:fixed; inset:0;
+        background:#0f1116;
+        color:#00aaff;
+        display:flex; align-items:center; justify-content:center;
+        font-family:'Poppins',sans-serif;
+        font-size:2rem; font-weight:600;
+        z-index:9999; opacity:1; transition:opacity 1s ease;
       }
+      #intro-overlay.fade-out { opacity:0; pointer-events:none; }
     </style>
   </head>
+
   <body class="homepage is-preload">
     <div id="page-wrapper">
 
       <!-- Header -->
       <div id="header">
-        <div class="inner" data-aos="fade-down" data-aos-duration="700">
-          <header>
+        <div class="inner">
+          <header data-aos="fade-down">
             <h1><a href="index.html" id="logo">Ramon J. Williams</a></h1>
             <hr />
-            <p>Computer Science & Cybersecurity Student<br/>University of Kentucky | Lexington, KY</p>
-            <p class="typed-wrap"><span id="typed"></span></p>
+            <p>Computer Science & Cybersecurity Student<br/>University of Kentucky — Lexington, KY</p>
+            <div class="typing" id="typed"></div>
           </header>
           <footer>
             <a href="#banner" class="button primary viewwork-btn scrolly">View My Work</a>
@@ -159,135 +113,91 @@
         </div>
 
         <!-- Nav -->
-        <nav id="nav" data-aos="fade-up" data-aos-delay="100">
+        <nav id="nav" data-aos="fade-down" data-aos-delay="200">
           <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="left-sidebar.html">Projects</a></li>
             <li><a href="right-sidebar.html">Skills</a></li>
-            <li><a href="no-sidebar.html">Education & Contact</a></li>
+            <li><a href="no-sidebar.html">Education</a></li>
           </ul>
         </nav>
       </div>
 
-      <!-- Banner (kept minimal for dark theme) -->
-      <section id="banner" aria-label="Hero"></section>
+      <!-- Banner / Featured Project -->
+      <section id="banner" data-aos="fade-up">
+        <header>
+          <h2>AI-Powered Study Assistant</h2>
+          <p>
+            A web-based AI tool that generates summaries, flashcards, and quizzes from uploaded notes using the OpenAI API.  
+            Built with Flask, SQL, and Docker on Azure.
+          </p>
+          <a href="left-sidebar.html" class="button primary">View All Projects</a>
+        </header>
+      </section>
 
-      <!-- Featured Project -->
-      <div id="featured" class="wrapper style2">
-        <article id="main" class="container special">
-          <header class="feature-card" data-aos="zoom-in" data-aos-duration="600">
-            <div class="feature-media" aria-hidden="true">
-              <!-- Replace with: <img src="assets/images/ai-study-assistant-hero.jpg" alt="AI Study Assistant preview" /> -->
-            </div>
-            <h2><a href="projects/ai-study-assistant.html">AI-Powered Study Assistant (Full-Stack · AI · Cloud)</a></h2>
-            <p>
-              Web app that turns class notes into summaries, flashcards, and practice questions using an LLM API.
-              Built with a Flask/Node backend, SQL storage, and deployed to Azure with Docker. Focused on secure auth,
-              clean UX, and efficient API handling.
-            </p>
-            <p style="margin-top:1rem;">
-              <a href="left-sidebar.html" class="button primary">View All Projects</a>
-              <a href="projects/ai-study-assistant.html" class="button" style="margin-left:.5rem;">Open Project Page</a>
-            </p>
-          </header>
-        </article>
-      </div>
-
-      <!-- What I Do -->
-      <div class="wrapper style1">
+      <!-- Highlights -->
+      <div class="wrapper style1" data-aos="fade-up" data-aos-delay="200">
         <section id="features" class="container special">
-          <header data-aos="fade-up">
+          <header>
             <h2>What I Do</h2>
-            <p>Core focus areas shaped by my coursework and projects.</p>
+            <p>Key areas of my expertise:</p>
           </header>
-          <div class="row" style="row-gap:2rem;">
-            <article class="col-4 col-12-mobile special" data-aos="fade-up" data-aos-delay="0">
-              <span class="icon solid fa-shield-halved fa-3x"></span>
+          <div class="row">
+            <article class="col-4 col-12-mobile special">
+              <span class="icon solid fa-shield-alt fa-3x"></span>
               <header><h3>Cybersecurity</h3></header>
-              <p class="text-dim">Host-based intrusion detection, phishing simulations, and secure systems fundamentals.</p>
+              <p>Host-based threat monitoring, phishing simulations, and system hardening.</p>
             </article>
-            <article class="col-4 col-12-mobile special" data-aos="fade-up" data-aos-delay="100">
+            <article class="col-4 col-12-mobile special">
               <span class="icon solid fa-code fa-3x"></span>
-              <header><h3>Software Engineering</h3></header>
-              <p class="text-dim">Python, Java, C++, JavaScript · REST APIs · Git/GitHub · testing and debugging workflows.</p>
+              <header><h3>Programming</h3></header>
+              <p>Experienced in Python, Java, C++, JavaScript, and full-stack web development.</p>
             </article>
-            <article class="col-4 col-12-mobile special" data-aos="fade-up" data-aos-delay="200">
-              <span class="icon solid fa-brain fa-3x"></span>
-              <header><h3>AI & Cloud</h3></header>
-              <p class="text-dim">LLM integration, data analysis, Azure + Docker deployment, and practical ML foundations.</p>
+            <article class="col-4 col-12-mobile special">
+              <span class="icon solid fa-users fa-3x"></span>
+              <header><h3>Leadership</h3></header>
+              <p>Co-founder of ColorStack @ UKY, fostering collaboration and diversity in CS.</p>
             </article>
           </div>
-          <footer style="margin-top:1.75rem;" data-aos="fade-up" data-aos-delay="250">
-            <a href="right-sidebar.html" class="button">See Full Skillset</a>
-          </footer>
         </section>
       </div>
 
       <!-- Footer -->
       <div id="footer">
         <div class="container" data-aos="fade-up">
-          <section class="contact">
-            <header>
-              <h3>Let’s Connect</h3>
-            </header>
-            <p>Open to internships and collaborations in software, security, and AI.</p>
-            <ul class="icons" style="display:flex; justify-content:center; gap:1.25rem;">
-              <li><a href="https://github.com/RamonWil" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-              <li><a href="https://linkedin.com/in/itsramon-williams" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-              <li><a href="mailto:ramonwilliams09@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-            </ul>
-          </section>
           <hr />
-          <div class="copyright">
-            <ul class="menu">
-              <li>&copy; 2025 Ramon J. Williams. All rights reserved.</li>
-            </ul>
-          </div>
+          <ul class="menu" style="text-align:center;">
+            <li>&copy; 2025 Ramon J. Williams. All rights reserved.</li><br/>
+            <li>
+              <a href="mailto:ramonwilliams09@gmail.com">Email</a> |
+              <a href="https://github.com/RamonWil">GitHub</a> |
+              <a href="https://linkedin.com/in/itsramon-williams">LinkedIn</a>
+            </li>
+          </ul>
         </div>
       </div>
 
     </div>
 
-    <!-- Core Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.dropotron.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
-
-    <!-- AOS (Animate On Scroll) -->
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-
-    <!-- Typed.js (Typing Effect) -->
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
-
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script>
-      // Init AOS
-      AOS.init({
-        once: true,
-        duration: 600,
-        easing: 'ease-out-cubic'
-      });
+      // Init scroll animations
+      AOS.init({ duration: 800, once: true });
 
-      // Init Typed.js rotating taglines
-      new Typed('#typed', {
+      // Typing effect
+      new Typed("#typed", {
         strings: [
-          'Building Secure, Intelligent Systems…',
-          'Exploring AI and Cloud Technologies…',
-          'Developing the Future of Cybersecurity…'
+          "Building Secure, Intelligent Systems...",
+          "Exploring AI and Cloud Technologies...",
+          "Developing the Future of Cybersecurity..."
         ],
         typeSpeed: 45,
-        backSpeed: 28,
-        backDelay: 1400,
-        smartBackspace: true,
-        loop: true,
-        showCursor: true,
-        cursorChar: '|'
+        backSpeed: 25,
+        backDelay: 1500,
+        loop: true
       });
-    </script>
-  </body>
-</html>
 
+      // Intro overlay fade
+      window.add
