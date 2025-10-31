@@ -1,101 +1,242 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
   <head>
-    <title>Ramon J. Williams | Cybersecurity Engineer</title>
+    <title>Ramon J. Williams | Computer Science & Cybersecurity Student</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="Ramon J. Williams — Computer Science & Cybersecurity Student at the University of Kentucky. Projects in AI, security, cloud, and software engineering." />
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- AOS (Animate On Scroll) -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
+
+    <!-- Font Awesome (if your template doesn't already include it) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+    <style>
+      /* ---------- Dark Professional Palette Overrides ---------- */
+      :root{
+        --bg-0:#0f1116;      /* page background */
+        --bg-1:#14161c;      /* section alt */
+        --bg-2:#1a1c24;      /* cards */
+        --text-0:#e4e6eb;    /* primary text */
+        --text-dim:#b9bdc9;  /* secondary */
+        --accent:#00aaff;    /* primary accent */
+        --accent-2:#1f8bff;  /* hover accent */
+      }
+
+      body, .homepage {
+        background: var(--bg-0);
+        color: var(--text-0);
+        font-family: "Open Sans", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      }
+
+      #header {
+        background: linear-gradient(180deg, rgba(10,12,18,0.8) 0%, rgba(10,12,18,0.2) 100%), url('assets/images/overlay.png');
+      }
+
+      #header .inner header h1#logo {
+        font-family: "Poppins", sans-serif;
+        letter-spacing: 0.5px;
+      }
+
+      a, .button {
+        transition: all .25s ease;
+      }
+      a { color: var(--accent); }
+      a:hover { color: var(--accent-2); }
+
+      .button.primary, .button.circled {
+        background: var(--accent);
+        color: #0b0e14 !important;
+        border: none !important;
+        box-shadow: 0 0 0 rgba(0,170,255,0);
+      }
+      .button.primary:hover, .button.circled:hover {
+        background: var(--accent-2);
+        box-shadow: 0 0 14px rgba(0,170,255,.5);
+        transform: translateY(-1px);
+      }
+
+      /* Banner (Hero) */
+      #banner {
+        background: transparent;
+        padding-top: 5rem;
+        padding-bottom: 3rem;
+        text-align: center;
+      }
+      #banner h2 {
+        font-family: "Poppins", sans-serif;
+        font-size: 2.4rem;
+        margin-bottom: .5rem;
+      }
+      #banner p {
+        color: var(--text-dim);
+        margin: .3rem 0;
+      }
+      .typed-wrap {
+        min-height: 28px;
+        display: inline-block;
+        color: var(--accent);
+        font-weight: 600;
+      }
+
+      /* Section Wrappers */
+      .wrapper.style1 { background: var(--bg-1); }
+      .wrapper.style2 { background: var(--bg-2); }
+
+      /* Featured Project Card */
+      .feature-card {
+        background: var(--bg-2);
+        border-radius: 16px;
+        padding: 2rem;
+        box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      }
+      .feature-card h2 a { color: var(--text-0); text-decoration: none; }
+      .feature-card p { color: var(--text-dim); }
+      .feature-media {
+        width: 100%;
+        height: 240px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #0b0e14 0%, #111520 100%);
+        display: grid;
+        place-items: center;
+        margin-bottom: 1.25rem;
+        position: relative;
+        overflow: hidden;
+      }
+      .feature-media::after{
+        content:"Upload a project hero image in /assets/images/ai-study-assistant-hero.jpg";
+        color:#6d7381;
+        font-size:.95rem;
+        opacity:.85;
+        padding: 0 1rem;
+        text-align: center;
+      }
+
+      /* What I Do icons */
+      #features .icon {
+        transition: transform .25s ease, text-shadow .25s ease;
+      }
+      #features article:hover .icon {
+        transform: translateY(-3px);
+        text-shadow: 0 0 10px rgba(0,170,255,.35);
+      }
+
+      /* Footer */
+      #footer {
+        background: #0b0e14;
+      }
+
+      /* Smooth anchor offset for fixed headers (if any) */
+      html { scroll-behavior: smooth; }
+
+      /* Responsive tweaks */
+      @media (max-width: 736px) {
+        #banner h2 { font-size: 1.9rem; }
+      }
+    </style>
   </head>
   <body class="homepage is-preload">
     <div id="page-wrapper">
 
       <!-- Header -->
       <div id="header">
-        <div class="inner">
+        <div class="inner" data-aos="fade-down" data-aos-duration="700">
           <header>
             <h1><a href="index.html" id="logo">Ramon J. Williams</a></h1>
             <hr />
-            <p>Aspiring Cybersecurity Engineer | Louisville, KY</p>
+            <p>Computer Science & Cybersecurity Student<br/>University of Kentucky | Louisville, KY</p>
+            <p class="typed-wrap"><span id="typed"></span></p>
           </header>
           <footer>
-            <a href="#banner" class="button circled scrolly">Explore</a>
+            <a href="#featured" class="button circled scrolly" aria-label="View My Work">View My Work</a>
           </footer>
         </div>
 
         <!-- Nav -->
-        <nav id="nav">
+        <nav id="nav" data-aos="fade-up" data-aos-delay="100">
           <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="left-sidebar.html">Projects</a></li>
             <li><a href="right-sidebar.html">Skills</a></li>
-            <li><a href="no-sidebar.html">Education</a></li>
+            <li><a href="no-sidebar.html">Education & Contact</a></li>
           </ul>
         </nav>
       </div>
 
-     <section id="banner">
-        <header>
-          <h2>Hi, I'm Ramon 👋</h2>
-          <p>
-            Computer Science student at the University of Kentucky.  
-            Passionate about <strong>cybersecurity, intrusion detection, and ethical hacking</strong>.
-          </p>
-          <p>
-            <a href="mailto:ramonwilliams09@uky.edu">Email</a> | 
-            <a href="https://github.com/RamonWil">GitHub</a> | 
-            <a href="https://linkedin.com/in/itsramon-williams">LinkedIn</a>
-          </p>
-        </header>
-      </section>
-
+      <!-- Banner (kept minimal for dark theme) -->
+      <section id="banner" aria-label="Hero"></section>
 
       <!-- Featured Project -->
-      <div class="wrapper style2">
+      <div id="featured" class="wrapper style2">
         <article id="main" class="container special">
-          <header>
-            <h2><a href="left-sidebar.html">Host-based Intrusion Detection System (HIDS)</a></h2>
+          <header class="feature-card" data-aos="zoom-in" data-aos-duration="600">
+            <div class="feature-media" aria-hidden="true">
+              <!-- Replace with: <img src="assets/images/ai-study-assistant-hero.jpg" alt="AI Study Assistant preview" /> -->
+            </div>
+            <h2><a href="projects/ai-study-assistant.html">AI-Powered Study Assistant (Full-Stack · AI · Cloud)</a></h2>
             <p>
-              A lightweight Python-based tool to monitor file integrity using cryptographic hashing.  
-              Features include anomaly logging, real-time alerts, and customizable monitoring rules.
+              Web app that turns class notes into summaries, flashcards, and practice questions using an LLM API.
+              Built with a Flask/Node backend, SQL storage, and deployed to Azure with Docker. Focused on secure auth,
+              clean UX, and efficient API handling.
+            </p>
+            <p style="margin-top:1rem;">
+              <a href="left-sidebar.html" class="button primary">View All Projects</a>
+              <a href="projects/ai-study-assistant.html" class="button" style="margin-left:.5rem;">Open Project Page</a>
             </p>
           </header>
-          <footer>
-            <a href="left-sidebar.html" class="button">View All Projects</a>
-          </footer>
         </article>
       </div>
 
-      <!-- Highlights -->
+      <!-- What I Do -->
       <div class="wrapper style1">
         <section id="features" class="container special">
-          <header>
+          <header data-aos="fade-up">
             <h2>What I Do</h2>
-            <p>Here are some of my core skills and focus areas:</p>
+            <p>Core focus areas shaped by my coursework and projects.</p>
           </header>
-          <div class="row">
-            <article class="col-4 col-12-mobile special">
-              <span class="icon solid fa-shield-alt fa-3x"></span>
+          <div class="row" style="row-gap:2rem;">
+            <article class="col-4 col-12-mobile special" data-aos="fade-up" data-aos-delay="0">
+              <span class="icon solid fa-shield-halved fa-3x"></span>
               <header><h3>Cybersecurity</h3></header>
-              <p>Intrusion detection, phishing simulations, and system hardening practices.</p>
+              <p class="text-dim">Host-based intrusion detection, phishing simulations, and secure systems fundamentals.</p>
             </article>
-            <article class="col-4 col-12-mobile special">
+            <article class="col-4 col-12-mobile special" data-aos="fade-up" data-aos-delay="100">
               <span class="icon solid fa-code fa-3x"></span>
-              <header><h3>Programming</h3></header>
-              <p>Python, Java, C++, JavaScript, plus web technologies like HTML & CSS.</p>
+              <header><h3>Software Engineering</h3></header>
+              <p class="text-dim">Python, Java, C++, JavaScript · REST APIs · Git/GitHub · testing and debugging workflows.</p>
             </article>
-            <article class="col-4 col-12-mobile special">
-              <span class="icon solid fa-users fa-3x"></span>
-              <header><h3>Leadership</h3></header>
-              <p>Co-founder of ColorStack @ UKY and active in NSBE, building diverse CS communities.</p>
+            <article class="col-4 col-12-mobile special" data-aos="fade-up" data-aos-delay="200">
+              <span class="icon solid fa-brain fa-3x"></span>
+              <header><h3>AI & Cloud</h3></header>
+              <p class="text-dim">LLM integration, data analysis, Azure + Docker deployment, and practical ML foundations.</p>
             </article>
           </div>
+          <footer style="margin-top:1.75rem;" data-aos="fade-up" data-aos-delay="250">
+            <a href="right-sidebar.html" class="button">See Full Skillset</a>
+          </footer>
         </section>
       </div>
 
       <!-- Footer -->
       <div id="footer">
-        <div class="container">
+        <div class="container" data-aos="fade-up">
+          <section class="contact">
+            <header>
+              <h3>Let’s Connect</h3>
+            </header>
+            <p>Open to internships and collaborations in software, security, and AI.</p>
+            <ul class="icons" style="display:flex; justify-content:center; gap:1.25rem;">
+              <li><a href="https://github.com/RamonWil" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+              <li><a href="https://linkedin.com/in/itsramon-williams" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+              <li><a href="mailto:ramonwilliams09@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+            </ul>
+          </section>
           <hr />
           <div class="copyright">
             <ul class="menu">
@@ -107,7 +248,7 @@
 
     </div>
 
-    <!-- Scripts -->
+    <!-- Core Scripts -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.dropotron.min.js"></script>
     <script src="assets/js/jquery.scrolly.min.js"></script>
@@ -116,9 +257,36 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+
+    <!-- AOS (Animate On Scroll) -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <!-- Typed.js (Typing Effect) -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <script>
+      // Init AOS
+      AOS.init({
+        once: true,
+        duration: 600,
+        easing: 'ease-out-cubic'
+      });
+
+      // Init Typed.js rotating taglines
+      new Typed('#typed', {
+        strings: [
+          'Building Secure, Intelligent Systems…',
+          'Exploring AI and Cloud Technologies…',
+          'Developing the Future of Cybersecurity…'
+        ],
+        typeSpeed: 45,
+        backSpeed: 28,
+        backDelay: 1400,
+        smartBackspace: true,
+        loop: true,
+        showCursor: true,
+        cursorChar: '|'
+      });
+    </script>
   </body>
 </html>
-
-
-
-
