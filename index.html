@@ -316,7 +316,7 @@
         cursorChar: '|'
       });
     </script>
-    <!-- Update Notice Popup -->
+        <!-- Update Notice Popup -->
     <div id="updateNotice" style="
       position: fixed;
       inset: 0;
@@ -330,8 +330,10 @@
       text-align: center;
       padding: 2rem;
       font-family: 'Open Sans', sans-serif;
+      opacity: 0;
+      animation: fadeIn 0.8s ease forwards;
     ">
-      <div style="max-width: 500px; background: #14161c; border-radius: 16px; padding: 2.5rem; box-shadow: 0 0 20px rgba(0,170,255,0.3);">
+      <div style="max-width: 520px; background: #14161c; border-radius: 18px; padding: 2.5rem; box-shadow: 0 0 25px rgba(0,170,255,0.3);" data-aos="zoom-in">
         <h2 style="font-family: 'Poppins', sans-serif; color: #00aaff; margin-bottom: 1rem;">Site Update Notice</h2>
         <p style="line-height: 1.6; margin-bottom: 1.8rem;">
           This portfolio website is currently being updated and does not yet reflect the full scope of my work and abilities.<br><br>
@@ -341,7 +343,7 @@
         <a href="assets/files/Ramon_Williams_Resume_Public.pdf" target="_blank" style="
           background: linear-gradient(135deg, #00aaff, #1f8bff);
           color: #0b0e14;
-          padding: 0.9em 2.5em;
+          padding: 0.9em 2.8em;
           border-radius: 40px;
           font-weight: 600;
           text-decoration: none;
@@ -363,11 +365,27 @@
       </div>
     </div>
 
+    <!-- Fade animations -->
+    <style>
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+
+      @keyframes fadeOut {
+        from { opacity: 1; }
+        to { opacity: 0; visibility: hidden; }
+      }
+    </style>
+
     <script>
       document.getElementById('closeNotice').addEventListener('click', function() {
-        document.getElementById('updateNotice').style.display = 'none';
+        const popup = document.getElementById('updateNotice');
+        popup.style.animation = 'fadeOut 0.6s ease forwards';
+        setTimeout(() => popup.style.display = 'none', 600);
       });
     </script>
+
 
   </body>
 </html>
