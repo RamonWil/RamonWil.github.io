@@ -1,31 +1,54 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
   <head>
-    <title>Ramon J. Williams | Contact</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <title>Education & Contact | Ramon J. Williams</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="assets/css/main.css"/>
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css"/></noscript>
+
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
+
+    <style>
+      :root{
+        --bg-0:#0f1116; --bg-1:#14161c; --bg-2:#1a1c24;
+        --text-0:#e4e6eb; --text-dim:#b9bdc9; --accent:#00aaff; --accent-2:#1f8bff;
+      }
+      body.no-sidebar{ background:var(--bg-0); color:var(--text-0); }
+      #header{ background:#0f1116; }
+      .wrapper.style1{ background:var(--bg-1); }
+      .edu-card, .contact-card{
+        background:var(--bg-2); border-radius:14px; padding:1.25rem; box-shadow:0 10px 30px rgba(0,0,0,.25);
+      }
+      .button.primary{ background:var(--accent); color:#0b0e14 !important; border:none; }
+      .button.primary:hover{ background:var(--accent-2); box-shadow:0 0 14px rgba(0,170,255,.45); }
+      #footer{ background:#0b0e14; }
+      a{ color:var(--accent); } a:hover{ color:var(--accent-2); }
+      input, textarea{
+        background:#0f131c; border:1px solid #263042; color:var(--text-0);
+      }
+    </style>
   </head>
   <body class="no-sidebar is-preload">
     <div id="page-wrapper">
 
       <!-- Header -->
       <div id="header">
-        <div class="inner">
+        <div class="inner" data-aos="fade-down">
           <header>
             <h1><a href="index.html" id="logo">Ramon J. Williams</a></h1>
-            <p>Aspiring Cybersecurity Engineer | Louisville, KY</p>
+            <p>Computer Science & Cybersecurity Student — University of Kentucky, Lexington, KY</p>
           </header>
         </div>
 
         <!-- Nav -->
-        <nav id="nav">
+        <nav id="nav" data-aos="fade-up">
           <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="left-sidebar.html">Portfolio</a></li>
+            <li><a href="left-sidebar.html">Projects</a></li>
             <li><a href="right-sidebar.html">Skills</a></li>
-            <li><a href="no-sidebar.html">Contact</a></li>
+            <li class="current"><a href="no-sidebar.html">Education & Contact</a></li>
           </ul>
         </nav>
       </div>
@@ -34,76 +57,59 @@
       <div class="wrapper style1">
         <div class="container">
           <article id="main" class="special">
-            <header>
-              <h2>Contact Me</h2>
-              <p>Let's collaborate, connect, or discuss opportunities</p>
+
+            <header data-aos="fade-up">
+              <h2>Education & Contact</h2>
+              <p>University background and how to reach me.</p>
             </header>
-            <section>
-              <h3>Get in Touch</h3>
-              <p>
-                I’m available for internships, collaborative projects, and cybersecurity 
-                discussions. Feel free to reach out via email, LinkedIn, or GitHub.
-              </p>
-              <ul>
-                <li>📧 Email: <a href="mailto:ramonwilliams09@uky.edu">ramonwilliams09@uky.edu</a></li>
-                <li>💻 GitHub: <a href="https://github.com/RamonWil">github.com/RamonWil</a></li>
-                <li>🔗 LinkedIn: <a href="https://linkedin.com/in/itsramon-williams">linkedin.com/in/itsramon-williams</a></li>
-              </ul>
-            </section>
 
-            <!-- Social & Professional Links -->
-            <section class="social-links">
-              <h3>Social & Professional Links</h3>
-              <p>Connect with me on social platforms:</p>
-              <p style="display: flex; gap: 2rem;">
-                <a href="https://github.com/RamonWil">GitHub</a>
-                <a href="https://linkedin.com/in/itsramon-williams">LinkedIn</a>
-                <a href="https://instagram.com/yourhandle">Instagram</a>
+            <section class="edu-card" data-aos="fade-up">
+              <h3>🎓 Education</h3>
+              <p><strong>University of Kentucky — College of Engineering</strong><br/>
+                 B.S. in Computer Science, Minor in Mathematics (Expected May 2028)<br/>
+                 GPA: <strong>3.5 / 4.0</strong><br/>
+                 <em>Relevant Coursework:</em> Introduction to Program Design, Data Structures, Advanced Programming & OS Interfaces, Discrete Math, Numerical Methods, Calculus III
               </p>
             </section>
 
-            <section>
-              <h3>Message Me Directly</h3>
-              <p>If you want, you can also send a direct message:</p>
-              <form method="post" action="#">
+            <section class="edu-card" data-aos="fade-up">
+              <h3>🌍 Activities & Leadership</h3>
+              <p><strong>ColorStack (Co-Founder, 2025–Present):</strong> Built a student community promoting mentorship, collaboration, and hackathons.</p>
+              <p><strong>Kroger (E-Commerce Pickup Associate, 2023–Present):</strong> Processed 100+ orders weekly with 95% accuracy through coordinated teamwork.</p>
+            </section>
+
+            <section class="contact-card" data-aos="fade-up">
+              <h3>📩 Contact Me</h3>
+              <p>Open to internships and collaborative projects. Reach out below or email me directly.</p>
+              <!-- Simple mailto fallback -->
+              <form action="mailto:ramonwilliams09@gmail.com" method="POST" enctype="text/plain">
                 <div class="row gtr-50">
-                  <div class="col-6 col-12-mobile"><input type="text" name="name" placeholder="Name" /></div>
-                  <div class="col-6 col-12-mobile"><input type="email" name="email" placeholder="Email" /></div>
-                  <div class="col-12"><textarea name="message" placeholder="Message"></textarea></div>
+                  <div class="col-6 col-12-mobile"><input type="text" name="name" placeholder="Name" required /></div>
+                  <div class="col-6 col-12-mobile"><input type="email" name="email" placeholder="Email" required /></div>
+                  <div class="col-12"><textarea name="message" placeholder="Message" rows="5" required></textarea></div>
                   <div class="col-12"><input type="submit" value="Send Message" class="button primary" /></div>
                 </div>
               </form>
+              <p style="margin-top:.75rem; color:#8ea3b7;">Prefer email? <a href="mailto:ramonwilliams09@gmail.com">ramonwilliams09@gmail.com</a></p>
             </section>
+
           </article>
         </div>
       </div>
 
       <!-- Footer -->
       <div id="footer">
-        <div class="container">
+        <div class="container" data-aos="fade-up">
           <section class="contact">
-            <header>
-              <h3>Connect With Me</h3>
-            </header>
-            <ul class="icons" style="display: flex; justify-content: center; gap: 2rem; padding-left: 0; list-style: none; align-items: center;">
-        <li style="text-align: center;">
-          <a href="https://github.com/RamonWil" class="icon brands fa-github"></a>
-          <div style="margin-top: 0.5rem;">GitHub</div>
-        </li>
-        <li style="text-align: center;">
-          <a href="https://linkedin.com/in/itsramon-williams" class="icon brands fa-linkedin-in"></a>
-          <div style="margin-top: 0.5rem;">LinkedIn</div>
-        </li>
-        <li style="text-align: center;">
-          <a href="mailto:ramonwilliams09@uky.edu" class="icon solid fa-envelope"></a>
-          <div style="margin-top: 0.5rem;">Email</div>
-        </li>
+            <header><h3>Connect</h3></header>
+            <ul class="icons">
+              <li><a href="https://github.com/RamonWil" class="icon brands fa-github"><span>GitHub</span></a></li>
+              <li><a href="https://linkedin.com/in/itsramon-williams" class="icon brands fa-linkedin-in"><span>LinkedIn</span></a></li>
+              <li><a href="mailto:ramonwilliams09@gmail.com" class="icon solid fa-envelope"><span>Email</span></a></li>
             </ul>
           </section>
           <div class="copyright">
-            <ul class="menu">
-              <li>&copy; 2025 Ramon J. Williams</li>
-            </ul>
+            <ul class="menu"><li>&copy; 2025 Ramon J. Williams</li></ul>
           </div>
         </div>
       </div>
@@ -119,11 +125,7 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>AOS.init({ once:true, duration:600, easing:'ease-out-cubic' });</script>
   </body>
 </html>
-
-
-
-
-
-
