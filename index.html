@@ -166,6 +166,25 @@
         box-shadow: 0 0 14px rgba(0,170,255,.5);
         transform: translateY(-2px);
       }
+            /* Modern “View My Work” button */
+      #viewWorkBtn {
+        background: linear-gradient(135deg, #00aaff, #1f8bff);
+        color: #0b0e14;
+        padding: 1.2em 3.8em;
+        border-radius: 45px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        font-size: 1.1em;
+        text-decoration: none;
+        display: inline-block;
+        box-shadow: 0 0 10px rgba(0,170,255,0.4);
+        transition: all 0.25s ease;
+      }
+
+      #viewWorkBtn:hover {
+        box-shadow: 0 0 22px rgba(0,170,255,0.7);
+        transform: translateY(-2px);
+      }
 
     </style>
   </head>
@@ -182,7 +201,7 @@
             <p class="typed-wrap"><span id="typed"></span></p>
           </header>
           <footer>
-            <a href="#featured" class="button scrolly" aria-label="View My Work">View My Work</a>
+            <a href="#banner" id="viewWorkBtn">View My Work</a>
           </footer>
         </div>
 
