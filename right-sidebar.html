@@ -5,6 +5,44 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+    /* --- Fix Quick Links layout --- */
+    ul.icons {
+      display: flex !important;
+      justify-content: center;
+      align-items: center;
+      gap: 1.2rem; /* spacing between icons */
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 50px;
+      padding: 0.6rem 1.2rem;
+    }
+
+    ul.icons li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    ul.icons li a {
+      width: 2.4em;
+      height: 2.4em;
+      line-height: 2.4em;
+      text-align: center;
+      color: #b9bdc9;
+      font-size: 1.3em;
+      transition: all 0.25s ease;
+    }
+
+    ul.icons li a:hover {
+      color: #00aaff;
+      text-shadow: 0 0 10px rgba(0,170,255,.4);
+    }
+
+    ul.icons .label {
+      display: none !important; /* hides overlapping text under icons */
+    }
+    </style>
+
     <!-- Dark Theme Overrides for Skills Page -->
     <style>
       :root {
