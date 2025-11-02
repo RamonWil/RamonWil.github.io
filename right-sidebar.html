@@ -5,6 +5,57 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+      :root {
+        --bg-0: #0f1116;      /* page background */
+        --bg-1: #14161c;      /* section alt */
+        --bg-2: #1a1c24;      /* cards */
+        --text-0: #e4e6eb;    /* primary text */
+        --text-dim: #b9bdc9;  /* secondary */
+        --accent: #00aaff;    /* primary accent */
+        --accent-2: #1f8bff;  /* hover accent */
+      }
+
+      body {
+        background: var(--bg-0);
+        color: var(--text-0);
+        font-family: "Open Sans", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      }
+
+      h1, h2, h3, h4 {
+        color: var(--text-0);
+        font-family: "Poppins", sans-serif;
+      }
+
+      a {
+        color: var(--accent);
+        transition: all .25s ease;
+      }
+
+      a:hover {
+        color: var(--accent-2);
+      }
+
+      #header, #footer {
+        background: var(--bg-1);
+      }
+
+      .wrapper.style1 {
+        background: var(--bg-1);
+      }
+
+      .wrapper.style2 {
+        background: var(--bg-2);
+      }
+
+      #sidebar section {
+        background: var(--bg-2);
+        border-radius: 12px;
+        padding: 1.5rem;
+        box-shadow: 0 8px 20px rgba(0,0,0,.25);
+      }
+    </style>
+
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
   </head>
   <body class="right-sidebar is-preload">
@@ -82,9 +133,9 @@
                   <h3>Certifications & Learning</h3>
                 </header>
                 <p>Currently working towards: CompTIA Security+, Python Security Projects, Web Security Tutorials.</p>
-                <footer>
+                <!-- <footer>
                   <a href="#" class="button">View Certificates</a>
-                </footer>
+                </footer> -->
               </section>
               <hr />
               <section>
