@@ -75,24 +75,55 @@
               </p>
             </header>
 
-            <!-- Gallery -->
-            <section data-aos="fade-up">
-              <h3>Gallery</h3>
-              <div class="grid">
-                <figure>
-                  <img src="../assets/images/ai1.jpg" alt="Upload notes UI" onclick="openLightbox('../assets/images/ai1.jpg','Upload interface for class notes.')" />
-                  <figcaption class="caption">Upload interface for class notes.</figcaption>
-                </figure>
-                <figure>
-                  <img src="../assets/images/ai2.jpg" alt="Generated flashcards" onclick="openLightbox('../assets/images/ai2.jpg','Generated flashcards from lecture content.')" />
-                  <figcaption class="caption">Generated flashcards from lecture content.</figcaption>
-                </figure>
-                <figure>
-                  <img src="../assets/images/ai3.jpg" alt="Practice questions page" onclick="openLightbox('../assets/images/ai3.jpg','Practice questions with immediate feedback.')" />
-                  <figcaption class="caption">Practice questions with immediate feedback.</figcaption>
-                </figure>
+          <!-- Case Study Scroll Sections -->
+          <section class="case-section" data-aos="fade-up" data-aos-delay="200">
+
+            <!-- Section 1 -->
+            <div class="case-block" data-aos="fade-right">
+              <div class="case-image">
+                <img src="../assets/images/ai1.jpg" alt="Upload notes interface" />
               </div>
-            </section>
+              <div class="case-text">
+                <h3>Smart Upload & Parsing</h3>
+                <p>
+                  Users upload lecture notes or PDFs, which the app automatically parses
+                  using OpenAI’s embedding model for text segmentation. Clean UI and
+                  error-handling ensure a smooth start to the study flow.
+                </p>
+              </div>
+            </div>
+
+            <!-- Section 2 -->
+            <div class="case-block reverse" data-aos="fade-left" data-aos-delay="100">
+              <div class="case-image">
+                <img src="../assets/images/ai2.jpg" alt="Generated flashcards" />
+              </div>
+              <div class="case-text">
+                <h3>LLM-Generated Flashcards</h3>
+                <p>
+                  After processing, the system generates concise flashcards and practice
+                  questions. Each item is stored in SQL with user metadata for later review
+                  and analytics.
+                </p>
+              </div>
+            </div>
+
+            <!-- Section 3 -->
+            <div class="case-block" data-aos="fade-right" data-aos-delay="200">
+              <div class="case-image">
+                <img src="../assets/images/ai3.jpg" alt="Practice questions page" />
+              </div>
+              <div class="case-text">
+                <h3>Interactive Practice Mode</h3>
+                <p>
+                  A responsive interface lets users quiz themselves with instant feedback.
+                  This final phase ties together AI output, backend validation, and smooth
+                  transitions powered by Flask and JavaScript.
+                </p>
+              </div>
+            </div>
+
+          </section>
           </article>
         </div>
       </div>
