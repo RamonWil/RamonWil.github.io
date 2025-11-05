@@ -29,6 +29,67 @@
       .lightbox img{ width:100%; height:auto; border-radius:10px; }
       .lightbox-caption{ color:#e4e6eb; margin-top:.6rem; text-align:center; }
       .close-x{ position:absolute; top:18px; right:22px; color:#e4e6eb; font-size:28px; cursor:pointer; }
+
+       /* Case Study Scroll Layout */
+      .case-section {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+        margin-top: 3rem;
+      }
+
+      .case-block {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 3rem;
+        flex-wrap: wrap;
+      }
+
+      .case-block.reverse {
+        flex-direction: row-reverse;
+      }
+
+      .case-image img {
+        width: 480px;
+        max-width: 100%;
+        border-radius: 14px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .case-image img:hover {
+        transform: scale(1.03);
+        box-shadow: 0 15px 35px rgba(0,170,255,0.35);
+      }
+
+      .case-text {
+        flex: 1 1 420px;
+        color: var(--text-dim);
+      }
+
+      .case-text h3 {
+        color: var(--text-0);
+        margin-bottom: 0.8rem;
+        font-family: "Poppins", sans-serif;
+        font-size: 1.4rem;
+      }
+
+      .case-text p {
+        line-height: 1.6;
+        font-size: 1rem;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .case-block, .case-block.reverse {
+          flex-direction: column;
+        }
+        .case-image img {
+          width: 100%;
+        }
+      }
+      
     </style>
   </head>
   <body class="no-sidebar is-preload">
