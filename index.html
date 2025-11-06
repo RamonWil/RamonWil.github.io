@@ -185,6 +185,10 @@
         box-shadow: 0 0 22px rgba(0,170,255,0.7);
         transform: translateY(-2px);
       }
+    @keyframes fadeInHeader {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
     </style>
   </head>
@@ -193,17 +197,26 @@
 
       <!-- Header -->
       <div id="header">
-        <div class="inner" data-aos="fade-down" data-aos-duration="700">
-          <header>
-            <h1><a href="index.html" id="logo">Ramon J. Williams</a></h1>
-            <hr />
-            <p>Computer Science & Cybersecurity Student<br/>University of Kentucky | Lexington, KY</p>
-            <p class="typed-wrap"><span id="typed"></span></p>
-          </header>
-          <footer>
-            <a href="#banner" id="viewWorkBtn">View My Work</a>
-          </footer>
-        </div>
+      <div class="inner" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+        <header>
+          <h1 style="opacity:0; animation: fadeInHeader 1.2s ease forwards 0.2s;">
+            <a href="index.html" id="logo">Ramon J. Williams</a>
+          </h1>
+          <hr style="opacity:0; animation: fadeInHeader 1.2s ease forwards 0.4s;" />
+          <p style="opacity:0; animation: fadeInHeader 1.2s ease forwards 0.6s;">
+            Computer Science & Cybersecurity Student<br/>
+            University of Kentucky | Lexington, KY
+          </p>
+          <p class="typed-wrap" style="opacity:0; animation: fadeInHeader 1.2s ease forwards 0.8s;">
+            <span id="typed"></span>
+          </p>
+        </header>
+
+        <footer style="opacity:0; animation: fadeInHeader 1.2s ease forwards 1s;">
+          <a href="#banner" id="viewWorkBtn">View My Work</a>
+        </footer>
+      </div>
+
 
         <!-- Nav -->
         <nav id="nav" data-aos="fade-up" data-aos-delay="100">
