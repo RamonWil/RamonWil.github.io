@@ -102,5 +102,67 @@
     <script src="../assets/js/main.js"></script>
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script>AOS.init({once:true,duration:700,easing:'ease-out-cubic'});</script>
+    <!-- Update Notice Popup -->
+    <div id="updateNotice" style="
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 12, 18, 0.97);
+      color: #e4e6eb;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      text-align: center;
+      padding: 2rem;
+      font-family: 'Open Sans', sans-serif;
+      opacity: 0;
+      animation: fadeIn 0.8s ease forwards;
+    ">
+      <div style="max-width: 520px; background: #14161c; border-radius: 18px; padding: 2.5rem; box-shadow: 0 0 25px rgba(0,170,255,0.3);" data-aos="zoom-in">
+        <h2 style="font-family: 'Poppins', sans-serif; color: #00aaff; margin-bottom: 1rem;">Project Update Notice</h2>
+        <p style="line-height: 1.6; margin-bottom: 1.8rem;">
+          This project page is still being updated. Some visuals, write-ups, or links may be incomplete.<br><br>
+          Please check back soon or reach out through my contact information on my résumé.<br><br>
+          Thank you for your patience.
+        </p>
+        <a href="../assets/files/Ramon_Williams_Resume_Public.pdf" target="_blank" style="
+          background: linear-gradient(135deg, #00aaff, #1f8bff);
+          color: #0b0e14;
+          padding: 0.9em 2.8em;
+          border-radius: 40px;
+          font-weight: 600;
+          text-decoration: none;
+          box-shadow: 0 0 10px rgba(0,170,255,0.4);
+          transition: all 0.25s ease;
+          display: inline-block;
+        ">View Résumé</a>
+        <br><br>
+        <button id="closeNotice" style="
+          margin-top: 1rem;
+          background: none;
+          border: 1px solid #00aaff;
+          color: #00aaff;
+          padding: 0.6em 1.8em;
+          border-radius: 40px;
+          cursor: pointer;
+          transition: 0.3s ease;
+        ">Continue to Project</button>
+      </div>
+    </div>
+
+    <style>
+      @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+      @keyframes fadeOut { from { opacity: 1; } to { opacity: 0; visibility: hidden; } }
+    </style>
+
+    <script>
+      document.getElementById('closeNotice').addEventListener('click', function() {
+        const popup = document.getElementById('updateNotice');
+        popup.style.animation = 'fadeOut 0.6s ease forwards';
+        setTimeout(() => popup.style.display = 'none', 600);
+      });
+    </script>
+
   </body>
 </html>
