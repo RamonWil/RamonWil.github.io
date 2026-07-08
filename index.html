@@ -14,7 +14,7 @@
     <!-- AOS (Animate On Scroll) -->
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
 
-    <!-- Font Awesome (if your template doesn't already include it) -->
+    <!-- Font Awesome --> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
     <style>
@@ -27,6 +27,18 @@
         --text-dim:#b9bdc9;  /* secondary */
         --accent:#00aaff;    /* primary accent */
         --accent-2:#1f8bff;  /* hover accent */
+      }
+
+      /* Profile Picture */
+      .profile-pic {
+        width: 160px;
+        height: 160px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 4px solid var(--accent);
+        box-shadow: 0 0 20px rgba(0,170,255,.35);
+        margin-bottom: 1.5rem;
+        animation: fadeInHeader 1.2s ease forwards;
       }
 
       body, .homepage {
@@ -211,6 +223,11 @@
       <div id="header">
       <div class="inner" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
         <header>
+          <img 
+            src="assets/images/profile.jpg" 
+            alt="Ramon J. Williams"
+            class="profile-pic"
+          />
           <h1 style="opacity:0; animation: fadeInHeader 1.2s ease forwards 0.2s;">
             <a href="index.html" id="logo">Ramon J. Williams</a>
           </h1>
