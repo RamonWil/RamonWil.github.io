@@ -38,7 +38,21 @@
         border: 4px solid var(--accent);
         box-shadow: 0 0 20px rgba(0,170,255,.35);
         margin-bottom: 1.5rem;
-        animation: fadeInHeader 1.2s ease forwards;
+
+        opacity: 0;
+        transform: translateX(-15px);
+        animation: fadeInProfile 1.2s ease forwards 0.1s;
+      }
+
+      @keyframes fadeInProfile {
+        from {
+          opacity: 0;
+          transform: translateX(-15px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(-35px);
+        }
       }
 
       body, .homepage {
