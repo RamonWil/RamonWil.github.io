@@ -97,37 +97,37 @@
 
       /* ---------- Individual Fade In Animations ---------- */
 
-    .fade-in {
-      opacity: 0;
-      animation: fadeInElement 1.2s ease forwards;
-    }
-
-    .fade-in-delay-1 {
-      opacity: 0;
-      animation: fadeInElement 1.2s ease forwards 0.2s;
-    }
-
-    .fade-in-delay-2 {
-      opacity: 0;
-      animation: fadeInElement 1.2s ease forwards 0.4s;
-    }
-
-    .fade-in-delay-3 {
-      opacity: 0;
-      animation: fadeInElement 1.2s ease forwards 0.6s;
-    }
-
-    @keyframes fadeInElement {
-      from {
+      .fade-in {
         opacity: 0;
-        transform: translateY(15px);
+        animation: fadeInElement 1.2s ease forwards 0.2s;
       }
 
-      to {
-        opacity: 1;
-        transform: translateY(0);
+      .fade-in-delay-1 {
+        opacity: 0;
+        animation: fadeInElement 1.2s ease forwards 0.4s;
       }
-    }
+
+      .fade-in-delay-2 {
+        opacity: 0;
+        animation: fadeInElement 1.2s ease forwards 0.6s;
+      }
+
+      .fade-in-delay-3 {
+        opacity: 0;
+        animation: fadeInElement 1.2s ease forwards 0.8s;
+      }
+
+      @keyframes fadeInElement {
+        from {
+          opacity: 0;
+          transform: translateY(15px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
       
     </style>
   </head>
@@ -136,15 +136,15 @@
 
       <!-- Header -->
       <div id="header">
-        <div class="inner" data-aos="fade-down">
-          <header class="fade-in">
+        <div class="inner fade-in">
+          <header>
             <h1><a href="index.html" id="logo">Ramon J. Williams</a></h1>
             <p class="fade-in-delay-1">Electrical Engineering & Cybersecurity Student — University of Kentucky, Lexington, KY</p>
           </header>
         </div>
 
         <!-- Nav -->
-        <nav id="nav" data-aos="fade-up">
+        <nav id="nav" class="fade-in-delay-2">
           <ul>
             <li><a href="index.html">Home</a></li>
             <li class="current"><a href="left-sidebar.html">Projects</a></li>
@@ -185,18 +185,18 @@
             <!-- Content -->
             <div class="col-8 col-12-mobile imp-mobile" id="content">
               <article id="main">
-                <header class="fade-in" data-aos="fade-up">
+                <header class="fade-in">
                   <h2>Projects</h2>
                   <p>Selected work in Security, AI, and Web Engineering</p>
                 </header>
 
             <!-- Project Grid -->
-            <div class="row gtr-150" data-aos-once="true" style="justify-content:center;">
+            <div class="row gtr-150" style="justify-content:center;">
 
 
 
               <!-- HIDS -->
-              <div class="col-6 col-12-mobile fade-in-delay-1" data-aos="fade-up" data-aos-delay="150" data-aos-duration="700">
+              <div class="col-6 col-12-mobile fade-in-delay-1">
                 <div class="project-card">
                   <img src="assets/images/hids-hero.jpg" alt="HIDS Project" class="project-thumb" />
                   <h3 style="margin-top:.9rem;">Host-Based Intrusion Detection System (HIDS)</h3>
@@ -211,7 +211,7 @@
               </div>
 
               <!-- Gophish -->
-              <div class="col-6 col-12-mobile fade-in-delay-2" data-aos="fade-up" data-aos-delay="300" data-aos-duration="700">
+              <div class="col-6 col-12-mobile fade-in-delay-2">
                 <div class="project-card">
                   <img src="assets/images/gophish-hero.jpg" alt="Gophish Simulation" class="project-thumb" />
                   <h3 style="margin-top:.9rem;">Phishing Attack Simulation (Gophish)</h3>
@@ -226,7 +226,7 @@
               </div>
 
                             <!-- AI Study Assistant -->
-              <div class="col-6 col-12-mobile fade-in" data-aos="fade-up" data-aos-delay="0" data-aos-duration="700">
+              <div class="col-6 col-12-mobile fade-in">
                 <div class="project-card">
                   <img src="assets/images/ai-study-assistant-hero.jpg" alt="AI Study Assistant" class="project-thumb" />
                   <h3 style="margin-top:.9rem;">AI-Powered Study Assistant</h3>
@@ -241,7 +241,7 @@
               </div>
 
               <!-- Web Dev -->
-              <div class="col-6 col-12-mobile fade-in-delay-3" data-aos="fade-up" data-aos-delay="450" data-aos-duration="700">
+              <div class="col-6 col-12-mobile fade-in-delay-3">
                 <div class="project-card">
                   <img src="assets/images/webdev-hero.jpg" alt="Web Development" class="project-thumb" />
                   <h3 style="margin-top:.9rem;">Web Development (Client Work)</h3>
@@ -265,9 +265,9 @@
         </div>
       </div>
 
-      <!-- Footer -->
+       <!-- Footer -->
       <div id="footer">
-        <div class="container fade-in" data-aos="fade-up">
+        <div class="container fade-in">
           <section class="contact">
             <header><h3>Let’s Connect</h3></header>
             <p>Open to internships and collaborations in software, security, and AI.</p>
@@ -282,6 +282,7 @@
           </div>
         </div>
       </div>
+
     </div>
 
     <!-- Scripts -->
@@ -296,6 +297,14 @@
 
     <!-- AOS -->
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-    <script>AOS.init({ once:true, duration:600, easing:'ease-out-cubic' });</script>
+
+    <script>
+      AOS.init({
+        once:true,
+        duration:600,
+        easing:'ease-out-cubic'
+      });
+    </script>
+
   </body>
 </html>
