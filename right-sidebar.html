@@ -75,10 +75,6 @@
 
 
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-  </head><header data-aos="fade-up">
-  <h2>Technical & Programming Skills</h2>
-  <p>A comprehensive overview of my technical expertise</p>
-</header>
   <body class="right-sidebar">
     <div id="page-wrapper">
 
@@ -96,9 +92,11 @@
       </div>
 
         <!-- Nav -->
-        <nav id="nav">
+        <nav id="nav" style="opacity:0; animation: fadeInNav 1s ease forwards 0.2s;">
           <ul>
-            <li><a href="index.html">Home</a></li>
+            <li style="opacity:0; animation: fadeInNavItem 0.8s ease forwards 0.3s;">
+              <a href="index.html">Home</a>
+            </li>
             <li><a href="left-sidebar.html">Projects</a></li>
             <li><a href="right-sidebar.html">Skills</a></li>
             <li><a href="no-sidebar.html">Contact</a></li>
@@ -114,7 +112,7 @@
             <!-- Content -->
             <div class="col-8 col-12-mobile" id="content">
               <article id="main">
-                <header>
+                <header data-aos="fade-up">
                   <h2>Technical & Programming Skills</h2>
                   <p>A comprehensive overview of my technical expertise</p>
                 </header>
