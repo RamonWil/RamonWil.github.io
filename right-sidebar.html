@@ -41,85 +41,59 @@
     ul.icons .label {
       display: none !important; /* hides overlapping text under icons */
     }
+
+
+      /* Navbar Fade Animations */
+      @keyframes fadeInNav {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInNavItem {
+        from {
+          opacity: 0;
+          transform: translateY(-8px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+
+      
     </style>
 
-    <!-- Dark Theme Overrides for Skills Page -->
-    <style>
-      :root {
-        --bg-0: #0f1116;
-        --bg-1: #14161c;
-        --bg-2: #1a1c24;
-        --text-0: #e4e6eb;
-        --text-dim: #b9bdc9;
-        --accent: #00aaff;
-        --accent-2: #1f8bff;
-      }
+  </head>
 
-      body {
-        background: var(--bg-0) !important;
-        color: var(--text-0) !important;
-        font-family: "Open Sans", sans-serif;
-      }
-
-      h1, h2, h3, h4 {
-        color: var(--text-0);
-        font-family: "Poppins", sans-serif;
-      }
-
-      p, li {
-        color: var(--text-dim);
-      }
-
-      a {
-        color: var(--accent);
-        transition: all 0.3s ease;
-      }
-      a:hover {
-        color: var(--accent-2);
-      }
-
-      #header {
-        background: var(--bg-1) !important;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-      }
-
-      #header .inner header h1,
-      #header .inner header p {
-        color: var(--text-0);
-      }
-
-      .wrapper.style1, .wrapper.style2 {
-        background: var(--bg-1) !important;
-        color: var(--text-0);
-      }
-
-      #sidebar section {
-        background: var(--bg-2);
-        border-radius: 14px;
-        padding: 1.5rem;
-        box-shadow: 0 4px 18px rgba(0,0,0,.3);
-      }
-
-      #footer {
-        background: var(--bg-1);
-        color: var(--text-dim);
-      }
-    </style>
 
 
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-  </head>
-  <body class="right-sidebar is-preload" style="background: var(--bg-0); color: var(--text-0);">
+  </head><header data-aos="fade-up">
+  <h2>Technical & Programming Skills</h2>
+  <p>A comprehensive overview of my technical expertise</p>
+</header>
+  <body class="right-sidebar">
     <div id="page-wrapper">
 
       <!-- Header -->
       <div id="header">
-        <div class="inner">
-          <header>
-            <h1><a href="index.html" id="logo">Ramon J. Williams</a></h1>
-            <p>Aspiring Electrical and Cybersecurity Engineer | Louisville, KY</p>
-          </header>
-        </div>
+      <div class="inner" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+        <header>
+          <h1>
+            <a href="index.html" id="logo">Ramon J. Williams</a>
+          </h1>
+          <p data-aos="fade-up" data-aos-delay="100">
+            Electrical Engineering & Cybersecurity Student — University of Kentucky, Lexington, KY
+          </p>
+        </header>
+      </div>
 
         <!-- Nav -->
         <nav id="nav">
@@ -145,7 +119,7 @@
                   <p>A comprehensive overview of my technical expertise</p>
                 </header>
 
-                <section>
+                <section data-aos="fade-up">
                   <h3>Programming Languages</h3>
                   <ul>
                     <li>Python – Automation, Scripting, Security Tools</li>
@@ -156,7 +130,7 @@
                   </ul>
                 </section>
 
-                <section>
+                <section data-aos="fade-up">
                   <h3>Web Development</h3>
                   <ul>
                     <li>HTML5, CSS – Responsive and Modern Web Layouts</li>
@@ -165,7 +139,7 @@
                   </ul>
                 </section>
 
-                <section>
+                <section data-aos="fade-up">
                   <h3>Other Technical Skills</h3>
                   <ul>
                     <li>Computer Assembly & Troubleshooting</li>
@@ -179,7 +153,7 @@
 
             <!-- Sidebar -->
             <div class="col-4 col-12-mobile" id="sidebar">
-              <section>
+              <section data-aos="fade-up">
                 <header>
                   <h3>Certifications & Learning</h3>
                 </header>
@@ -189,7 +163,7 @@
                 </footer> -->
               </section>
               <hr />
-              <section>
+              <section data-aos="fade-up">
                 <header>
                   <h3>Quick Links</h3>
                 </header>
@@ -238,6 +212,15 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+      AOS.init({
+        once:true,
+        duration:600,
+        easing:'ease-out-cubic'
+      });
+    </script>
   </body>
 </html>
 
