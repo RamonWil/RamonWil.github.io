@@ -73,60 +73,22 @@
         }
       }
 
-
-    /* ---------- Page Load Animations (Matches Index) ---------- */
-
-    .fade-up {
-      opacity: 0;
-      animation: fadeUp 1s ease forwards;
-    }
-
-    .fade-up-delay-1 {
-      opacity: 0;
-      animation: fadeUp 1s ease forwards .2s;
-    }
-
-    .fade-up-delay-2 {
-      opacity: 0;
-      animation: fadeUp 1s ease forwards .4s;
-    }
-
-    .fade-up-delay-3 {
-      opacity: 0;
-      animation: fadeUp 1s ease forwards .6s;
-    }
-
-    .fade-up-delay-4 {
-      opacity: 0;
-      animation: fadeUp 1s ease forwards .8s;
-    }
-
-    @keyframes fadeUp {
-      from {
-        opacity:0;
-        transform:translateY(15px);
-      }
-      to {
-        opacity:1;
-        transform:translateY(0);
-      }
-    }
-
     </style>
   </head>
-  <body class="no-sidebar is-preload">
+  <body class="no-sidebar">
     <div id="page-wrapper">
 
     
 
       <!-- Header -->
-      <div id="header">
-        <div class="inner" data-aos="fade-down">
-          <header class="fade-up">
-            <h1><a href="index.html" id="logo">Ramon J. Williams</a></h1>
-            <p class="fade-up-delay-1">Electrical Engineering & Cybersecurity Student — University of Kentucky, Lexington, KY</p>
-          </header>
-        </div>
+      <div class="inner" data-aos="fade-up">
+        <header>
+          <h1><a href="index.html" id="logo">Ramon J. Williams</a></h1>
+          <p data-aos="fade-up" data-aos-delay="100">
+            Electrical Engineering & Cybersecurity Student — University of Kentucky, Lexington, KY
+          </p>
+        </header>
+      </div>
 
         <!-- Nav -->
     <nav id="nav" style="opacity:0; animation: fadeInNav 1s ease forwards 0.2s;">
@@ -156,7 +118,7 @@
               <p class="fade-up-delay-1">University background and how to reach me.</p>
             </header>   
 
-            <section class="edu-card fade-up-delay-1" data-aos="fade-up">
+            <section class="edu-card" data-aos="fade-up">
               <h3>🎓 Education</h3>
               <p><strong>University of Kentucky — College of Engineering</strong><br/>
                  B.S. in Electrical Engineering, Minor in Mathematics (Expected Dec 2027/May 2028)<br/>
@@ -165,13 +127,13 @@
               </p>
             </section>
 
-            <section class="edu-card fade-up-delay-2" data-aos="fade-up">
+            <section class="edu-card" data-aos="fade-up" data-aos-delay="100">
               <h3>🌍 Activities & Leadership</h3>
               <p><strong>ColorStack (Co-Founder, 2026–Present):</strong> Built a student community promoting mentorship, collaboration, and hackathons.</p>
               <p><strong>Kroger (E-Commerce Pickup Associate, 2023–Present):</strong> Processed 100+ orders weekly with 95% accuracy through coordinated teamwork.</p>
             </section>
 
-            <section class="contact-card  fade-up-delay-3" data-aos="fade-up">
+            <section class="contact-card" data-aos="fade-up" data-aos-delay="200">
               <h3>📩 Contact Me</h3>
               <p>Open to internships and collaborative projects. Reach out below or email me directly.</p>
               <!-- Simple mailto fallback -->
@@ -192,7 +154,7 @@
 
       <!-- Footer -->
       <div id="footer">
-        <div class="container fade-up" data-aos="fade-up"><body class="left-sidebar"></body>
+        <div class="container" data-aos="fade-up">
           <section class="contact">
             <header><h3>Connect</h3></header>
             <ul class="icons">
