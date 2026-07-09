@@ -4,6 +4,7 @@
     <title>Ramon J. Williams | Skills</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
     <style>
     /* --- Fix Quick Links layout --- */
@@ -41,7 +42,71 @@
     ul.icons .label {
       display: none !important; /* hides overlapping text under icons */
     }
+/* ---------- Dark Theme ---------- */
 
+      :root {
+        --bg-0:#0f1116;
+        --bg-1:#14161c;
+        --bg-2:#1a1c24;
+        --text-0:#e4e6eb;
+        --text-dim:#b9bdc9;
+        --accent:#00aaff;
+        --accent-2:#1f8bff;
+      }
+
+      body {
+        background:var(--bg-0) !important;
+        color:var(--text-0) !important;
+        font-family:"Open Sans", sans-serif;
+      }
+
+      h1, h2, h3, h4 {
+        color:var(--text-0);
+      }
+
+      p, li {
+        color:var(--text-dim);
+      }
+
+      a {
+        color:var(--accent);
+        transition:all .25s ease;
+      }
+
+      a:hover {
+        color:var(--accent-2);
+      }
+
+      #header {
+        background:var(--bg-0) !important;
+      }
+
+      #header .inner header h1 a {
+        color:var(--text-0);
+      }
+
+      #header p {
+        color:var(--text-dim);
+      }
+
+      #nav a {
+        color:var(--text-0);
+      }
+
+      .wrapper.style1 {
+        background:var(--bg-1) !important;
+      }
+
+      #sidebar section {
+        background:var(--bg-2);
+        border-radius:14px;
+        padding:1.5rem;
+        box-shadow:0 10px 30px rgba(0,0,0,.25);
+      }
+
+      #footer {
+        background:#0b0e14 !important;
+      }
 
       /* Navbar Fade Animations */
       @keyframes fadeInNav {
@@ -70,12 +135,15 @@
       
     </style>
 
+
+<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
   </head>
 
 
 
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-  <body class="right-sidebar">
+    
+  <body class="right-sidebar is-preload">
     <div id="page-wrapper">
 
       <!-- Header -->
@@ -93,20 +161,22 @@
 
         <nav id="nav" style="opacity:0; animation: fadeInNav 1s ease forwards 0.2s;">
           <ul>
-            <li style="opacity:0; animation: fadeInNavItem 0.8s ease forwards 0.3s;">
+            <li>
               <a href="index.html">Home</a>
             </li>
-            <li style="opacity:0; animation: fadeInNavItem 0.8s ease forwards 0.45s;">
+            <li>
               <a href="left-sidebar.html">Projects</a>
             </li>
-            <li style="opacity:0; animation: fadeInNavItem 0.8s ease forwards 0.6s;">
+            <li>
               <a href="right-sidebar.html">Skills</a>
             </li>
-            <li style="opacity:0; animation: fadeInNavItem 0.8s ease forwards 0.75s;">
+            <li>
               <a href="no-sidebar.html">Education & Contact</a>
             </li>
           </ul>
         </nav>
+      </div>
+
 
       <!-- Main -->
       <div class="wrapper style1">
