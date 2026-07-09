@@ -15,55 +15,145 @@
         --bg-0:#0f1116; --bg-1:#14161c; --bg-2:#1a1c24;
         --text-0:#e4e6eb; --text-dim:#b9bdc9; --accent:#00aaff; --accent-2:#1f8bff;
       }
+
       body.no-sidebar{ background:var(--bg-0); color:var(--text-0); }
       #header{ background:#0f1116; }
       .wrapper.style1{ background:var(--bg-1); }
+
       .edu-card, .contact-card{
-        background:var(--bg-2); border-radius:14px; padding:1.25rem; box-shadow:0 10px 30px rgba(0,0,0,.25);
+        background:var(--bg-2); 
+        border-radius:14px; 
+        padding:1.25rem; 
+        box-shadow:0 10px 30px rgba(0,0,0,.25);
       }
-      .button.primary{ background:var(--accent); color:#0b0e14 !important; border:none; }
-      .button.primary:hover{ background:var(--accent-2); box-shadow:0 0 14px rgba(0,170,255,.45); }
+
+      .button.primary{ 
+        background:var(--accent); 
+        color:#0b0e14 !important; 
+        border:none; 
+      }
+
+      .button.primary:hover{ 
+        background:var(--accent-2); 
+        box-shadow:0 0 14px rgba(0,170,255,.45); 
+      }
+
       #footer{ background:#0b0e14; }
-      a{ color:var(--accent); } a:hover{ color:var(--accent-2); }
+
+      a{ color:var(--accent); } 
+      a:hover{ color:var(--accent-2); }
+
       input, textarea{
-        background:#0f131c; border:1px solid #263042; color:var(--text-0);
+        background:#0f131c; 
+        border:1px solid #263042; 
+        color:var(--text-0);
       }
+
+
+            /* Navbar Fade Animations */
+      @keyframes fadeInNav {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInNavItem {
+        from {
+          opacity: 0;
+          transform: translateY(-8px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+
+      /* ---------- Individual Fade In Animations ---------- */
+
+      .fade-in {
+        opacity:0;
+        animation: fadeInElement 1.2s ease forwards;
+      }
+
+      .fade-in-delay-1 {
+        opacity:0;
+        animation: fadeInElement 1.2s ease forwards 0.2s;
+      }
+
+      .fade-in-delay-2 {
+        opacity:0;
+        animation: fadeInElement 1.2s ease forwards 0.4s;
+      }
+
+      .fade-in-delay-3 {
+        opacity:0;
+        animation: fadeInElement 1.2s ease forwards 0.6s;
+      }
+
+
+      @keyframes fadeInElement {
+        from {
+          opacity:0;
+          transform:translateY(15px);
+        }
+
+        to {
+          opacity:1;
+          transform:translateY(0);
+        }
+      }
+
     </style>
   </head>
   <body class="no-sidebar is-preload">
     <div id="page-wrapper">
 
+    
+
       <!-- Header -->
       <div id="header">
         <div class="inner" data-aos="fade-down">
-          <header>
+          <header class="fade-in">
             <h1><a href="index.html" id="logo">Ramon J. Williams</a></h1>
-            <p>Electrical Engineering & Cybersecurity Student — University of Kentucky, Lexington, KY</p>
+            <p class="fade-in-delay-1">Electrical Engineering & Cybersecurity Student — University of Kentucky, Lexington, KY</p>
           </header>
         </div>
 
         <!-- Nav -->
-        <nav id="nav" class="fade-in-delay-2">
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li class="current"><a href="left-sidebar.html">Projects</a></li>
-            <li><a href="right-sidebar.html">Skills</a></li>
-            <li><a href="no-sidebar.html">Education & Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-      
+    <nav id="nav" style="opacity:0; animation: fadeInNav 1s ease forwards 0.2s;">
+      <ul>
+        <li style="opacity:0; animation: fadeInNavItem 0.8s ease forwards 0.3s;">
+          <a href="index.html">Home</a>
+        </li>
+        <li style="opacity:0; animation: fadeInNavItem 0.8s ease forwards 0.45s;">
+          <a href="left-sidebar.html">Projects</a>
+        </li>
+        <li style="opacity:0; animation: fadeInNavItem 0.8s ease forwards 0.6s;">
+          <a href="right-sidebar.html">Skills</a>
+        </li>
+        <li style="opacity:0; animation: fadeInNavItem 0.8s ease forwards 0.75s;">
+          <a href="no-sidebar.html">Education & Contact</a>
+        </li>
+      </ul>
+    </nav>
+
       <!-- Main -->
       <div class="wrapper style1">
         <div class="container">
           <article id="main" class="special">
 
-            <header data-aos="fade-up">
+            <header class="fade-in" data-aos="fade-up">
               <h2>Education & Contact</h2>
-              <p>University background and how to reach me.</p>
-            </header>
+              <p class="fade-in-delay-1">University background and how to reach me.</p>
+            </header>   
 
-            <section class="edu-card" data-aos="fade-up">
+            <section class="edu-card fade-in-delay-1" data-aos="fade-up">
               <h3>🎓 Education</h3>
               <p><strong>University of Kentucky — College of Engineering</strong><br/>
                  B.S. in Electrical Engineering, Minor in Mathematics (Expected Dec 2027/May 2028)<br/>
@@ -72,13 +162,13 @@
               </p>
             </section>
 
-            <section class="edu-card" data-aos="fade-up">
+            <section class="edu-card fade-in-delay-2" data-aos="fade-up">
               <h3>🌍 Activities & Leadership</h3>
               <p><strong>ColorStack (Co-Founder, 2026–Present):</strong> Built a student community promoting mentorship, collaboration, and hackathons.</p>
               <p><strong>Kroger (E-Commerce Pickup Associate, 2023–Present):</strong> Processed 100+ orders weekly with 95% accuracy through coordinated teamwork.</p>
             </section>
 
-            <section class="contact-card" data-aos="fade-up">
+            <section class="contact-card  fade-in-delay-3" data-aos="fade-up">
               <h3>📩 Contact Me</h3>
               <p>Open to internships and collaborative projects. Reach out below or email me directly.</p>
               <!-- Simple mailto fallback -->
@@ -99,7 +189,7 @@
 
       <!-- Footer -->
       <div id="footer">
-        <div class="container" data-aos="fade-up">
+        <div class="container fade-in" data-aos="fade-up">
           <section class="contact">
             <header><h3>Connect</h3></header>
             <ul class="icons">
