@@ -4,7 +4,7 @@
     <title>Ramon J. Williams | Skills</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
     <style>
     /* --- Fix Quick Links layout --- */
     ul.icons {
@@ -91,22 +91,26 @@
         </header>
       </div>
 
-        <!-- Nav -->
         <nav id="nav" style="opacity:0; animation: fadeInNav 1s ease forwards 0.2s;">
           <ul>
             <li style="opacity:0; animation: fadeInNavItem 0.8s ease forwards 0.3s;">
               <a href="index.html">Home</a>
             </li>
-            <li><a href="left-sidebar.html">Projects</a></li>
-            <li><a href="right-sidebar.html">Skills</a></li>
-            <li><a href="no-sidebar.html">Contact</a></li>
+            <li style="opacity:0; animation: fadeInNavItem 0.8s ease forwards 0.45s;">
+              <a href="left-sidebar.html">Projects</a>
+            </li>
+            <li style="opacity:0; animation: fadeInNavItem 0.8s ease forwards 0.6s;">
+              <a href="right-sidebar.html">Skills</a>
+            </li>
+            <li style="opacity:0; animation: fadeInNavItem 0.8s ease forwards 0.75s;">
+              <a href="no-sidebar.html">Education & Contact</a>
+            </li>
           </ul>
         </nav>
-      </div>
 
       <!-- Main -->
       <div class="wrapper style1">
-        <div class="container">
+        <div class="container" data-aos="fade-up">
           <div class="row gtr-200">
 
             <!-- Content -->
@@ -128,7 +132,7 @@
                   </ul>
                 </section>
 
-                <section data-aos="fade-up">
+                <section data-aos="fade-up" data-aos-delay="100">
                   <h3>Web Development</h3>
                   <ul>
                     <li>HTML5, CSS – Responsive and Modern Web Layouts</li>
@@ -137,7 +141,7 @@
                   </ul>
                 </section>
 
-                <section data-aos="fade-up">
+                <section data-aos="fade-up" data-aos-delay="200">
                   <h3>Other Technical Skills</h3>
                   <ul>
                     <li>Computer Assembly & Troubleshooting</li>
