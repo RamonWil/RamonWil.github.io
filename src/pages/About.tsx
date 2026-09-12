@@ -30,7 +30,7 @@ export default function About() {
             <TiltCard maxTilt={5} perspective={1000} showGlare={true} className="w-full aspect-[3/4] rounded-[2rem] overflow-hidden border border-white/10 bg-[#080a0f]/50 p-2 block cursor-hover">
                <div className="w-full h-full rounded-2xl overflow-hidden relative">
                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10" />
-                 <img src="/assets/images/updatedpfp.jpg" alt="Ramon J. Williams" loading="eager" fetchPriority="high" className="w-full h-full object-cover transition-all duration-700" />
+                 <img src="./assets/images/updatedpfp.jpg" alt="Ramon J. Williams" loading="eager" fetchPriority="high" className="w-full h-full object-cover transition-all duration-700" />
                </div>
             </TiltCard>
           </motion.div>

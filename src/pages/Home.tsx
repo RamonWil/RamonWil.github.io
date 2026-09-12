@@ -131,7 +131,7 @@ export default function Home() {
                 <TiltCard maxTilt={10} perspective={1000} showGlare={true} className="w-full aspect-[4/5] rounded-3xl overflow-hidden border border-white/10 bg-[#080a0f]/50 p-2">
                    <div className="w-full h-full rounded-2xl overflow-hidden relative">
                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10" />
-                     <img src="/assets/images/updatedpfp.jpg" alt="Ramon J. Williams" loading="eager" fetchPriority="high" className="w-full h-full object-cover transition-all duration-700" />
+                     <img src="./assets/images/updatedpfp.jpg" alt="Ramon J. Williams" loading="eager" fetchPriority="high" className="w-full h-full object-cover transition-all duration-700" />
                      <div className="absolute bottom-6 left-6 z-20">
                        <div className="text-white font-display font-bold text-xl">Ramon J. Williams</div>
                        <div className="text-blue-400 font-sans text-sm">Lexington, KY</div>
