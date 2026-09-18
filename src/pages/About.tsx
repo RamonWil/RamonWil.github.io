@@ -46,7 +46,7 @@ export default function About() {
             <div>
               <h2 className="text-xl sm:text-2xl font-display font-medium text-white mb-3 sm:mb-4">Background</h2>
               <p className="text-gray-400 text-base sm:text-lg leading-relaxed font-sans font-light">
-                I'm Ramon J. Williams, a dedicated Electrical Engineering and Cybersecurity student at the University of Kentucky. My journey bridges the gap between hardware functionality and secure, intelligent software systems.
+                I'm Ramon J. Williams, a dedicated Computer Engineering and Cybersecurity student at the University of Kentucky. My journey bridges the gap between hardware functionality and secure, intelligent software systems.
               </p>
             </div>
             
@@ -64,7 +64,7 @@ export default function About() {
                   <h3 className="text-lg sm:text-xl font-bold text-white">University of Kentucky</h3>
                   <span className="text-blue-400 text-xs sm:text-sm font-bold uppercase tracking-wider">In Progress</span>
                 </div>
-                <p className="text-gray-400 font-sans text-sm sm:text-base">B.S. Electrical Engineering &amp; Cybersecurity</p>
+                <p className="text-gray-400 font-sans text-sm sm:text-base">B.S. Computer Engineering &amp; Cybersecurity</p>
               </div>
             </div>
           </motion.div>

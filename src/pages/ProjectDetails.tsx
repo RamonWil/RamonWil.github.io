@@ -140,28 +140,48 @@ export default function ProjectDetails() {
           </motion.div>
         </div>
 
-        {/* Gallery */}
+        {/* Interactive Showcase */}
         {project.images && project.images.length > 0 && (
-          <div className="space-y-8 sm:space-y-12">
-            <motion.h2 
+          <div className="space-y-16 sm:space-y-24 mt-16 sm:mt-24">
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-2xl sm:text-3xl font-display font-medium text-white"
+              viewport={{ once: true, margin: "-100px" }}
+              className="text-center mb-12 sm:mb-16"
             >
-              Gallery
-            </motion.h2>
+              <h2 className="text-2xl sm:text-4xl font-display font-medium text-white mb-4">Feature Showcase</h2>
+              <div className="w-16 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent mx-auto" />
+            </motion.div>
             
             {project.images.map((img, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.8 }}
-                className="w-full aspect-[16/9] rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden bg-[#030406] border border-white/10 relative"
+                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                className={`flex flex-col ${idx % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 lg:gap-16 items-center`}
               >
-                <div className="absolute inset-0 bg-contain bg-center bg-no-repeat" style={{ backgroundImage: `url("${img}")` }} />
+                <div className="w-full lg:w-3/5">
+                  <div className="w-full aspect-[16/10] sm:aspect-[4/3] rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden bg-[#030406] border border-white/10 relative shadow-2xl group">
+                    <div className="absolute inset-0 bg-contain bg-center bg-no-repeat transition-transform duration-700 group-hover:scale-105" style={{ backgroundImage: `url("${img.url}")` }} />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
+                  </div>
+                </div>
+                
+                <div className="w-full lg:w-2/5 flex flex-col justify-center">
+                  <motion.div
+                    initial={{ opacity: 0, x: idx % 2 === 0 ? 30 : -30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                  >
+                    <div className="h-px w-12 bg-blue-400 mb-6" />
+                    <p className="text-gray-300 text-lg sm:text-xl leading-relaxed font-sans font-light">
+                      {img.text}
+                    </p>
+                  </motion.div>
+                </div>
               </motion.div>
             ))}
           </div>
