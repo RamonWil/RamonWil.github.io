@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import PageTransition from '../components/PageTransition';
 import TiltCard from '../components/TiltCard';
@@ -51,21 +50,29 @@ export default function About() {
             </div>
             
             <div>
-              <h2 className="text-xl sm:text-2xl font-display font-medium text-white mb-3 sm:mb-4">Philosophy</h2>
+              <h2 className="text-xl sm:text-2xl font-display font-medium text-white mb-3 sm:mb-4">My Philosophy</h2>
               <p className="text-gray-400 text-base sm:text-lg leading-relaxed font-sans font-light">
-                I believe that true engineering elegance comes from robust architecture. Whether I am configuring a high-availability cloud pipeline, fine-tuning an intrusion detection algorithm, or crafting a seamless user interface, security and performance remain at the core of my design ethos.
+                I believe that true engineering excellence comes from robust architecture. Whether I am configuring a high-availability cloud pipeline, fine-tuning an intrusion detection algorithm, or crafting a seamless user interface, security and performance remain at the core of my design ethos.
               </p>
             </div>
             
             <div>
               <h2 className="text-xl sm:text-2xl font-display font-medium text-white mb-3 sm:mb-4">Education</h2>
-              <div className="bg-white/5 border border-white/10 rounded-2xl p-5 sm:p-6 backdrop-blur-md">
+              <TiltCard 
+                showGlare={true} 
+                maxTilt={10} 
+                perspective={1000} 
+                className="bg-[#080a0f]/60 border border-white/10 group-hover:border-white/20 rounded-2xl p-5 sm:p-6 backdrop-blur-md transition-colors duration-300 group shadow-xl"
+              >
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1 sm:gap-0 mb-2">
-                  <h3 className="text-lg sm:text-xl font-bold text-white">University of Kentucky</h3>
+                  <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-blue-200 transition-colors">University of Kentucky</h3>
                   <span className="text-blue-400 text-xs sm:text-sm font-bold uppercase tracking-wider">In Progress</span>
                 </div>
-                <p className="text-gray-400 font-sans text-sm sm:text-base">B.S. Computer Engineering &amp; Cybersecurity</p>
-              </div>
+                <p className="text-gray-400 font-sans text-sm sm:text-base mb-3">B.S. Computer Engineering &amp; Cybersecurity</p>
+                <span className="inline-block text-xs sm:text-sm font-medium text-blue-400 bg-blue-500/10 px-2.5 py-1 rounded-lg border border-blue-500/20 font-sans">
+                  GPA: 3.5
+                </span>
+              </TiltCard>
             </div>
           </motion.div>
         </div>

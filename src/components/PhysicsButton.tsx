@@ -5,14 +5,17 @@ import { useDevice } from '../hooks/useDevice';
 
 const MotionLink = motion.create(Link);
 
-interface PhysicsButtonProps extends React.AnchorHTMLAttributes<HTMLAnchorElement>, React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface PhysicsButtonProps {
   children: React.ReactNode;
   to?: string;
   href?: string;
+  target?: string;
+  rel?: string;
   onClick?: (e?: any) => void;
   className?: string;
   type?: "button" | "submit" | "reset";
   hoverGlowColor?: string; // Change this to your brand color e.g. "rgba(59, 130, 246, 0.5)"
+  [key: string]: any;
 }
 
 export default function PhysicsButton(props: PhysicsButtonProps) {

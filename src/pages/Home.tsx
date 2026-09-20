@@ -1,11 +1,9 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Mail, Shield, Code, Brain, ChevronRight } from 'lucide-react';
 import PageTransition from '../components/PageTransition';
 import TiltCard from '../components/TiltCard';
 import PhysicsButton from '../components/PhysicsButton';
-import TextReveal from '../components/TextReveal';
-import { Link } from 'react-router-dom';
 import { projects } from '../data/projects';
 import { ArrowUpRight } from 'lucide-react';
 
@@ -22,7 +20,7 @@ const fadeInUp = {
   visible: (custom: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: custom * 0.15, duration: 0.8, ease: [0.16, 1, 0.3, 1] }
+    transition: { delay: custom * 0.15, duration: 0.8, ease: [0.16, 1, 0.3, 1] as const }
   })
 };
 
@@ -31,7 +29,7 @@ const fadeScale = {
   visible: (custom: number) => ({
     opacity: 1,
     scale: 1,
-    transition: { delay: custom * 0.15, duration: 0.8, ease: [0.16, 1, 0.3, 1] }
+    transition: { delay: custom * 0.15, duration: 0.8, ease: [0.16, 1, 0.3, 1] as const }
   })
 };
 
@@ -118,7 +116,7 @@ export default function Home() {
                      <img src="./assets/images/updatedpfp.jpg" alt="Ramon J. Williams" loading="eager" fetchPriority="high" className="w-full h-full object-cover transition-all duration-700" />
                      <div className="absolute bottom-6 left-6 z-20">
                        <div className="text-white font-display font-bold text-xl">Ramon J. Williams</div>
-                       <div className="text-blue-400 font-sans text-sm">Lexington, KY</div>
+                       <div className="text-blue-400 font-sans text-sm">Louisville, KY</div>
                      </div>
                    </div>
                 </TiltCard>
@@ -249,8 +247,8 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: idx * 0.15 }}
                 className="h-full"
               >
-                <TiltCard showGlare={true} maxTilt={15} perspective={800} className={`p-6 sm:p-8 rounded-[1.75rem] sm:rounded-[2rem] bg-[#080a0f]/40 backdrop-blur-3xl border border-white/5 hover:border-white/10 transition-all duration-300 group h-full block cursor-hover w-full relative overflow-hidden`}>
-                  <div className={`absolute inset-0 bg-gradient-to-br ${item.bg} opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none`} />
+                <TiltCard showGlare={true} maxTilt={14} perspective={800} className="p-6 sm:p-8 rounded-[1.75rem] sm:rounded-[2rem] bg-[#080a0f]/60 backdrop-blur-3xl border border-white/10 group-hover:border-white/20 transition-colors duration-300 group h-full block cursor-hover w-full relative overflow-hidden shadow-2xl">
+                  <div className={`absolute inset-0 bg-gradient-to-br ${item.bg} opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`} />
                   
                   <div className="pointer-events-none relative z-10">
                     <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-5 sm:mb-6 group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-500 ease-out shadow-lg">

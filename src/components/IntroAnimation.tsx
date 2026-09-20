@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function IntroAnimation({ onComplete }: { onComplete: () => void }) {
@@ -7,19 +7,18 @@ export default function IntroAnimation({ onComplete }: { onComplete: () => void 
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(false);
-      setTimeout(onComplete, 1000); // give time for fade out
-    }, 2500);
+    }, 2200);
     return () => clearTimeout(timer);
-  }, [onComplete]);
+  }, []);
 
   return (
-    <AnimatePresence>
+    <AnimatePresence onExitComplete={onComplete}>
       {isVisible && (
         <motion.div
           className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#030406]"
           initial={{ opacity: 1 }}
-          exit={{ opacity: 0, y: -20, filter: 'blur(10px)' }}
-          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+          exit={{ opacity: 0, y: -25, filter: 'blur(12px)' }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}

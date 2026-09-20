@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, ArrowUpRight, FileText } from 'lucide-react';
+import { ArrowLeft, ArrowUpRight, ArrowUp, FileText } from 'lucide-react';
 import PageTransition from '../components/PageTransition';
 import PhysicsButton from '../components/PhysicsButton';
 import { projects } from '../data/projects';
@@ -41,9 +41,13 @@ export default function ProjectDetails() {
           transition={{ duration: 0.5 }}
           className="mb-8 sm:mb-12"
         >
-          <Link to="/projects" className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors cursor-hover font-sans text-sm sm:text-base py-2">
-            <ArrowLeft size={18} /> Back to Projects
-          </Link>
+          <PhysicsButton
+            to="/projects"
+            className="px-4 sm:px-5 py-2 sm:py-2.5 rounded-full bg-white/5 hover:bg-white/10 text-gray-200 hover:text-white font-sans text-xs sm:text-sm font-medium tracking-wide border border-white/10 hover:border-white/20 transition-all backdrop-blur-md shadow-md flex items-center gap-2 group cursor-hover"
+          >
+            <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
+            <span>Back to Projects</span>
+          </PhysicsButton>
         </motion.div>
 
         {/* Header */}
@@ -186,6 +190,32 @@ export default function ProjectDetails() {
             ))}
           </div>
         )}
+
+        {/* Bottom Navigation: Back to Top & Back to Projects */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mt-20 sm:mt-28 pt-10 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4"
+        >
+          <PhysicsButton
+            to="/projects"
+            className="w-full sm:w-auto px-5 sm:px-6 py-3 rounded-full bg-white/5 hover:bg-white/10 text-gray-200 hover:text-white font-sans text-xs sm:text-sm font-semibold tracking-wider uppercase border border-white/10 hover:border-white/20 transition-all backdrop-blur-md shadow-lg flex items-center gap-2 group cursor-hover"
+          >
+            <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
+            <span>Back to Projects</span>
+          </PhysicsButton>
+
+          <PhysicsButton
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            hoverGlowColor="rgba(59, 130, 246, 0.4)"
+            className="w-full sm:w-auto px-5 sm:px-6 py-3 rounded-full bg-blue-600/20 hover:bg-blue-600/30 text-blue-300 hover:text-white font-sans text-xs sm:text-sm font-semibold tracking-wider uppercase border border-blue-500/30 hover:border-blue-500/50 transition-all backdrop-blur-md shadow-lg flex items-center gap-2 group cursor-hover"
+          >
+            <span>Back to the Top</span>
+            <ArrowUp size={16} className="group-hover:-translate-y-1 transition-transform" />
+          </PhysicsButton>
+        </motion.div>
 
       </div>
     </PageTransition>

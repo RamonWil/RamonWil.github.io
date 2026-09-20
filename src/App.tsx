@@ -1,10 +1,21 @@
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  }, [pathname]);
+
+  return null;
+}
 
 import CustomCursor from './components/CustomCursor';
 import IntroAnimation from './components/IntroAnimation';
 import Background3D from './components/Background3D';
+import ScrollProgress from './components/ScrollProgress';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 
@@ -18,13 +29,15 @@ function App() {
   const location = useLocation();
 
   return (
-    <div className="bg-[#050505] bg-grid relative selection:bg-blue-500/30 selection:text-white min-h-screen flex flex-col">
+    <div className="bg-[#050505] relative selection:bg-blue-500/30 selection:text-white min-h-screen flex flex-col">
+      <ScrollToTop />
       <CustomCursor />
       <IntroAnimation onComplete={() => setIntroDone(true)} />
       
       {introDone && (
         <>
           <Background3D />
+          <ScrollProgress />
           <Navbar />
           
           <div className="flex-grow">

@@ -1,5 +1,5 @@
-import React from 'react';
-import { Shield, Brain, Globe, LayoutTemplate } from 'lucide-react';
+import type { ReactNode } from 'react';
+import { Shield, Brain, Globe } from 'lucide-react';
 
 export interface ProjectData {
   id: string;
@@ -7,7 +7,7 @@ export interface ProjectData {
   description: string;
   fullDescription: string;
   tags: string[];
-  icon: JSX.Element;
+  icon: ReactNode;
   image: string | null;
   link: string;
   featured: boolean;

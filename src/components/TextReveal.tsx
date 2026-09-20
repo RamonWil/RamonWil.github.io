@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 
 export default function TextReveal({ text, className = "" }: { text: string, className?: string }) {
@@ -18,7 +17,7 @@ export default function TextReveal({ text, className = "" }: { text: string, cla
       y: 0,
       rotate: 0,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         damping: 12,
         stiffness: 100,
       },
@@ -28,7 +27,7 @@ export default function TextReveal({ text, className = "" }: { text: string, cla
       y: 40,
       rotate: 5,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         damping: 12,
         stiffness: 100,
       },

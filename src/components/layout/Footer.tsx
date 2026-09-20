@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 
 export default function Footer() {
@@ -13,7 +12,7 @@ export default function Footer() {
       <div className="absolute inset-0 bg-gradient-to-t from-blue-900/10 to-transparent pointer-events-none" />
       <div className="text-3xl font-display font-bold text-white mb-2">RJW</div>
       <div className="text-gray-400 text-sm font-sans flex items-center gap-2">
-        &copy; {new Date().getFullYear()} Ramon J. Williams. <span className="w-1 h-1 bg-gray-600 rounded-full mx-2" /> Crafted with intent.
+        &copy; {new Date().getFullYear()} Ramon J. Williams. <span className="w-1 h-1 bg-gray-600 rounded-full mx-2" /> Always building. Always learning.
       </div>
     </motion.footer>
   );
