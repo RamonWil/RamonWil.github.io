@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion';
+import { Mail, ArrowUpRight } from 'lucide-react';
 import PageTransition from '../components/PageTransition';
 import TiltCard from '../components/TiltCard';
+import PhysicsButton from '../components/PhysicsButton';
+import { GithubIcon, LinkedinIcon } from '../components/Icons';
 
 export default function About() {
   return (
@@ -73,6 +76,40 @@ export default function About() {
                   GPA: 3.5
                 </span>
               </TiltCard>
+            </div>
+
+            <div>
+              <h2 className="text-xl sm:text-2xl font-display font-medium text-white mb-3 sm:mb-4">Connect</h2>
+              <div className="flex flex-wrap items-center gap-3">
+                <PhysicsButton
+                  href="https://github.com/RamonWil"
+                  target="_blank"
+                  hoverGlowColor="rgba(59, 130, 246, 0.4)"
+                  className="h-11 px-5 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 text-white shadow-lg transition-colors font-semibold tracking-wide flex items-center gap-2 text-xs sm:text-sm cursor-hover"
+                >
+                  <GithubIcon size={16} />
+                  <span>GitHub</span>
+                  <ArrowUpRight size={14} />
+                </PhysicsButton>
+                <PhysicsButton
+                  href="https://linkedin.com/in/itsramon-williams"
+                  target="_blank"
+                  hoverGlowColor="rgba(59, 130, 246, 0.4)"
+                  className="h-11 px-5 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 text-white shadow-lg transition-colors font-semibold tracking-wide flex items-center gap-2 text-xs sm:text-sm cursor-hover"
+                >
+                  <LinkedinIcon size={16} />
+                  <span>LinkedIn</span>
+                  <ArrowUpRight size={14} />
+                </PhysicsButton>
+                <PhysicsButton
+                  href="mailto:ramonwilliams09@gmail.com"
+                  hoverGlowColor="rgba(255, 255, 255, 0.2)"
+                  className="h-11 px-5 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 text-white shadow-lg transition-colors font-semibold tracking-wide flex items-center gap-2 text-xs sm:text-sm cursor-hover"
+                >
+                  <Mail size={16} />
+                  <span>Email</span>
+                </PhysicsButton>
+              </div>
             </div>
           </motion.div>
         </div>

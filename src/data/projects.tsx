@@ -14,6 +14,7 @@ export interface ProjectData {
   images?: { url: string; text: string }[];
   reportUrl?: string;
   reportLabel?: string;
+  githubUrl?: string;
 }
 
 export const projects: ProjectData[] = [
@@ -38,6 +39,7 @@ export const projects: ProjectData[] = [
     icon: <Shield className="w-8 h-8" />,
     image: "./assets/images/project-images/Host Based Intrustion System/Thumbnail.jpg",
     link: "/project/hids",
+    githubUrl: "https://github.com/RamonWil/HIDS",
     featured: true,
     images: [
       {

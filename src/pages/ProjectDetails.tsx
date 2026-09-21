@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { ArrowLeft, ArrowUpRight, ArrowUp, FileText } from 'lucide-react';
 import PageTransition from '../components/PageTransition';
 import PhysicsButton from '../components/PhysicsButton';
+import { GithubIcon } from '../components/Icons';
 import { projects } from '../data/projects';
 
 export default function ProjectDetails() {
@@ -74,9 +75,22 @@ export default function ProjectDetails() {
                 href={project.link}
                 target="_blank"
                 hoverGlowColor="rgba(59, 130, 246, 0.4)"
-                className="h-12 sm:h-14 px-6 sm:px-8 rounded-full bg-white text-black hover:bg-gray-200 shadow-lg transition-colors font-semibold tracking-wide flex items-center justify-center gap-2 text-sm sm:text-base"
+                className="h-12 sm:h-14 px-6 sm:px-8 rounded-full bg-white text-black hover:bg-gray-200 shadow-lg transition-colors font-semibold tracking-wide flex items-center justify-center gap-2 text-sm sm:text-base cursor-hover"
               >
                 Visit Live Site <ArrowUpRight size={18} />
+              </PhysicsButton>
+            )}
+
+            {project.githubUrl && (
+              <PhysicsButton
+                href={project.githubUrl}
+                target="_blank"
+                hoverGlowColor="rgba(59, 130, 246, 0.4)"
+                className="h-12 sm:h-14 px-6 sm:px-8 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white shadow-lg transition-all font-semibold tracking-wide flex items-center justify-center gap-2.5 text-sm sm:text-base cursor-hover"
+              >
+                <GithubIcon size={18} />
+                <span>View on GitHub</span>
+                <ArrowUpRight size={16} />
               </PhysicsButton>
             )}
 
@@ -85,7 +99,7 @@ export default function ProjectDetails() {
                 href={project.reportUrl}
                 target="_blank"
                 hoverGlowColor="rgba(59, 130, 246, 0.4)"
-                className="h-12 sm:h-14 px-6 sm:px-8 rounded-full bg-white/10 border border-white/20 text-white hover:bg-white/20 shadow-lg transition-colors font-semibold tracking-wide flex items-center justify-center gap-2 text-sm sm:text-base"
+                className="h-12 sm:h-14 px-6 sm:px-8 rounded-full bg-white/10 border border-white/20 text-white hover:bg-white/20 shadow-lg transition-colors font-semibold tracking-wide flex items-center justify-center gap-2 text-sm sm:text-base cursor-hover"
               >
                 <FileText size={18} /> {project.reportLabel || "View Report"}
               </PhysicsButton>
@@ -140,6 +154,24 @@ export default function ProjectDetails() {
                     <span key={tag} className="text-gray-400 text-xs sm:text-sm font-sans bg-white/5 px-2.5 py-1 rounded-lg border border-white/5">{tag}</span>
                   ))}
                </div>
+
+               {project.githubUrl && (
+                 <div className="mt-6 pt-6 border-t border-white/10">
+                   <h3 className="text-lg sm:text-xl font-display font-medium text-white mb-3">Repository</h3>
+                   <a
+                     href={project.githubUrl}
+                     target="_blank"
+                     rel="noopener noreferrer"
+                     className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-xs sm:text-sm text-blue-400 hover:text-blue-300 transition-colors font-sans w-full justify-between group"
+                   >
+                     <span className="flex items-center gap-2 truncate">
+                       <GithubIcon size={16} />
+                       <span className="truncate">RamonWil/HIDS</span>
+                     </span>
+                     <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform flex-shrink-0" />
+                   </a>
+                 </div>
+               )}
              </div>
           </motion.div>
         </div>
@@ -191,7 +223,7 @@ export default function ProjectDetails() {
           </div>
         )}
 
-        {/* Bottom Navigation: Back to Top & Back to Projects */}
+        {/* Bottom Navigation: Back to Top, GitHub & Back to Projects */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -199,18 +231,33 @@ export default function ProjectDetails() {
           transition={{ duration: 0.6 }}
           className="mt-20 sm:mt-28 pt-10 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4"
         >
-          <PhysicsButton
-            to="/projects"
-            className="w-full sm:w-auto px-5 sm:px-6 py-3 rounded-full bg-white/5 hover:bg-white/10 text-gray-200 hover:text-white font-sans text-xs sm:text-sm font-semibold tracking-wider uppercase border border-white/10 hover:border-white/20 transition-all backdrop-blur-md shadow-lg flex items-center gap-2 group cursor-hover"
-          >
-            <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
-            <span>Back to Projects</span>
-          </PhysicsButton>
+          <div className="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">
+            <PhysicsButton
+              to="/projects"
+              className="w-full sm:w-auto px-5 sm:px-6 py-3 rounded-full bg-white/5 hover:bg-white/10 text-gray-200 hover:text-white font-sans text-xs sm:text-sm font-semibold tracking-wider uppercase border border-white/10 hover:border-white/20 transition-all backdrop-blur-md shadow-lg flex items-center justify-center gap-2 group cursor-hover"
+            >
+              <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
+              <span>Back to Projects</span>
+            </PhysicsButton>
+
+            {project.githubUrl && (
+              <PhysicsButton
+                href={project.githubUrl}
+                target="_blank"
+                hoverGlowColor="rgba(59, 130, 246, 0.4)"
+                className="w-full sm:w-auto px-5 sm:px-6 py-3 rounded-full bg-white/5 hover:bg-white/10 text-gray-200 hover:text-white font-sans text-xs sm:text-sm font-semibold tracking-wider uppercase border border-white/10 hover:border-white/20 transition-all backdrop-blur-md shadow-lg flex items-center justify-center gap-2 group cursor-hover"
+              >
+                <GithubIcon size={16} />
+                <span>View on GitHub</span>
+                <ArrowUpRight size={14} />
+              </PhysicsButton>
+            )}
+          </div>
 
           <PhysicsButton
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             hoverGlowColor="rgba(59, 130, 246, 0.4)"
-            className="w-full sm:w-auto px-5 sm:px-6 py-3 rounded-full bg-blue-600/20 hover:bg-blue-600/30 text-blue-300 hover:text-white font-sans text-xs sm:text-sm font-semibold tracking-wider uppercase border border-blue-500/30 hover:border-blue-500/50 transition-all backdrop-blur-md shadow-lg flex items-center gap-2 group cursor-hover"
+            className="w-full sm:w-auto px-5 sm:px-6 py-3 rounded-full bg-blue-600/20 hover:bg-blue-600/30 text-blue-300 hover:text-white font-sans text-xs sm:text-sm font-semibold tracking-wider uppercase border border-blue-500/30 hover:border-blue-500/50 transition-all backdrop-blur-md shadow-lg flex items-center justify-center gap-2 group cursor-hover"
           >
             <span>Back to the Top</span>
             <ArrowUp size={16} className="group-hover:-translate-y-1 transition-transform" />

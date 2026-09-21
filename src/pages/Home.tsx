@@ -6,14 +6,7 @@ import TiltCard from '../components/TiltCard';
 import PhysicsButton from '../components/PhysicsButton';
 import { projects } from '../data/projects';
 import { ArrowUpRight } from 'lucide-react';
-
-const LinkedinIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-    <rect x="2" y="9" width="4" height="12"></rect>
-    <circle cx="4" cy="4" r="2"></circle>
-  </svg>
-);
+import { GithubIcon, LinkedinIcon } from '../components/Icons';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -89,18 +82,30 @@ export default function Home() {
                 
                 <div className="flex items-center gap-3 sm:gap-4 px-1">
                   <PhysicsButton
+                    href="https://github.com/RamonWil"
+                    target="_blank"
+                    hoverGlowColor="rgba(59, 130, 246, 0.5)"
+                    className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 text-white backdrop-blur-xl transition-colors cursor-hover"
+                    aria-label="GitHub Profile"
+                  >
+                    <GithubIcon size={20} />
+                  </PhysicsButton>
+
+                  <PhysicsButton
                     href="https://linkedin.com/in/itsramon-williams"
                     target="_blank"
                     hoverGlowColor="rgba(59, 130, 246, 0.5)"
-                    className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 text-white backdrop-blur-xl transition-colors"
+                    className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 text-white backdrop-blur-xl transition-colors cursor-hover"
+                    aria-label="LinkedIn Profile"
                   >
-                    <LinkedinIcon />
+                    <LinkedinIcon size={20} />
                   </PhysicsButton>
                   
                   <PhysicsButton
                     href="mailto:ramonwilliams09@gmail.com"
                     hoverGlowColor="rgba(255, 255, 255, 0.2)"
-                    className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 text-white backdrop-blur-xl transition-colors"
+                    className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 text-white backdrop-blur-xl transition-colors cursor-hover"
+                    aria-label="Email"
                   >
                     <Mail size={20} />
                   </PhysicsButton>
@@ -138,71 +143,168 @@ export default function Home() {
             <div className="h-[1px] flex-1 bg-gradient-to-r from-white/10 to-transparent" />
           </motion.div>
           
-          <motion.div 
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8 }}
-          >
-            <TiltCard 
-               showGlare={true} 
-               maxTilt={5} 
-               perspective={1200} 
-               className="group relative rounded-[1.75rem] sm:rounded-[2rem] overflow-hidden bg-[#080a0f]/40 backdrop-blur-3xl border border-white/10 p-3 sm:p-5 block h-full cursor-hover"
+          <div className="space-y-6 sm:space-y-8">
+            {/* Project 1: SerSuite */}
+            <motion.div 
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8 }}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
-              
-              <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 h-full pointer-events-none">
+              <TiltCard 
+                 showGlare={true} 
+                 maxTilt={5} 
+                 perspective={1200} 
+                 className="group relative rounded-[1.75rem] sm:rounded-[2rem] overflow-hidden bg-[#080a0f]/40 backdrop-blur-3xl border border-white/10 p-3 sm:p-5 block h-full cursor-hover"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
                 
-                {projects[0].image ? (
-                  <div className="relative h-[220px] sm:h-[320px] lg:h-full rounded-2xl sm:rounded-3xl overflow-hidden bg-[#030406] border border-white/5">
-                    <div className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-all duration-700" style={{ backgroundImage: `url("${projects[0].image}")` }} />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#080a0f] via-transparent to-transparent" />
-                  </div>
-                ) : (
-                  <div className="relative h-[220px] sm:h-[320px] lg:h-full rounded-2xl sm:rounded-3xl overflow-hidden bg-white/5 border border-white/5 flex items-center justify-center">
-                    <div className="w-24 h-24 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform duration-500">
-                       {projects[0].icon}
+                <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 h-full pointer-events-none">
+                  
+                  {projects[0].image ? (
+                    <div className="relative h-[220px] sm:h-[320px] lg:h-full rounded-2xl sm:rounded-3xl overflow-hidden bg-[#030406] border border-white/5">
+                      <div className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-all duration-700" style={{ backgroundImage: `url("${projects[0].image}")` }} />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#080a0f] via-transparent to-transparent" />
+                    </div>
+                  ) : (
+                    <div className="relative h-[220px] sm:h-[320px] lg:h-full rounded-2xl sm:rounded-3xl overflow-hidden bg-white/5 border border-white/5 flex items-center justify-center">
+                      <div className="w-24 h-24 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform duration-500">
+                         {projects[0].icon}
+                      </div>
+                    </div>
+                  )}
+                  
+                  <div className="flex flex-col justify-center py-3 sm:py-6 px-1 sm:px-2 lg:pr-6 pointer-events-auto h-full">
+                    <div className="flex flex-wrap gap-2 mb-4 sm:mb-6">
+                      {projects[0].tags.map((tag, tagIdx) => (
+                        <span key={tagIdx} className={`px-3 py-1 rounded-full border text-xs font-bold tracking-wider uppercase backdrop-blur-md font-sans ${tagIdx === 0 ? 'border-blue-500/30 text-blue-400 bg-blue-500/10' : 'border-white/10 text-gray-300 bg-white/5'}`}>
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-display font-medium mb-3 sm:mb-4 text-white group-hover:text-blue-200 transition-colors">
+                      {projects[0].title}
+                    </h3>
+                    
+                    <p className="text-gray-400 text-base sm:text-lg leading-relaxed mb-6 sm:mb-8 font-sans font-light flex-grow">
+                      {projects[0].description}
+                    </p>
+                    
+                    <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-stretch sm:items-center mt-auto">
+                      <PhysicsButton
+                        {...(projects[0].link.startsWith('http') ? { href: projects[0].link, target: "_blank" } : { to: projects[0].link })}
+                        hoverGlowColor="rgba(59, 130, 246, 0.4)"
+                        className="h-12 px-6 rounded-full bg-white text-black hover:bg-gray-200 shadow-lg transition-colors font-semibold tracking-wide flex items-center justify-center gap-2 cursor-hover"
+                      >
+                        Visit Site <ArrowUpRight size={18} />
+                      </PhysicsButton>
+                      <PhysicsButton
+                        to="/project/sersuite"
+                        hoverGlowColor="rgba(255, 255, 255, 0.2)"
+                        className="h-12 px-6 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 text-white shadow-lg transition-colors font-semibold tracking-wide flex items-center justify-center gap-2 cursor-hover"
+                      >
+                        View Details <ArrowUpRight size={16} />
+                      </PhysicsButton>
                     </div>
                   </div>
-                )}
-                
-                <div className="flex flex-col justify-center py-3 sm:py-6 px-1 sm:px-2 lg:pr-6 pointer-events-auto h-full">
-                  <div className="flex flex-wrap gap-2 mb-4 sm:mb-6">
-                    {projects[0].tags.map((tag, tagIdx) => (
-                      <span key={tagIdx} className={`px-3 py-1 rounded-full border text-xs font-bold tracking-wider uppercase backdrop-blur-md font-sans ${tagIdx === 0 ? 'border-blue-500/30 text-blue-400 bg-blue-500/10' : 'border-white/10 text-gray-300 bg-white/5'}`}>
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  
-                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-display font-medium mb-3 sm:mb-4 text-white group-hover:text-blue-200 transition-colors">
-                    {projects[0].title}
-                  </h3>
-                  
-                  <p className="text-gray-400 text-base sm:text-lg leading-relaxed mb-6 sm:mb-8 font-sans font-light flex-grow">
-                    {projects[0].description}
-                  </p>
-                  
-                  <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-stretch sm:items-center mt-auto">
-                    <PhysicsButton
-                      {...(projects[0].link.startsWith('http') ? { href: projects[0].link, target: "_blank" } : { to: projects[0].link })}
-                      hoverGlowColor="rgba(59, 130, 246, 0.4)"
-                      className="h-12 px-6 rounded-full bg-white text-black hover:bg-gray-200 shadow-lg transition-colors font-semibold tracking-wide flex items-center justify-center gap-2"
-                    >
-                      Visit Site <ArrowUpRight size={18} />
-                    </PhysicsButton>
-                    <PhysicsButton
-                      to="/projects"
-                      hoverGlowColor="rgba(255, 255, 255, 0.2)"
-                      className="h-12 px-6 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 text-white shadow-lg transition-colors font-semibold tracking-wide flex items-center justify-center gap-2"
-                    >
-                      View All Projects
-                    </PhysicsButton>
-                  </div>
                 </div>
-              </div>
-            </TiltCard>
+              </TiltCard>
+            </motion.div>
+
+            {/* Project 2: Host-based Intrusion Detection System */}
+            {projects[1] && (
+              <motion.div 
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8, delay: 0.1 }}
+              >
+                <TiltCard 
+                   showGlare={true} 
+                   maxTilt={5} 
+                   perspective={1200} 
+                   className="group relative rounded-[1.75rem] sm:rounded-[2rem] overflow-hidden bg-[#080a0f]/40 backdrop-blur-3xl border border-white/10 p-3 sm:p-5 block h-full cursor-hover"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+                  
+                  <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 h-full pointer-events-none">
+                    
+                    {projects[1].image ? (
+                      <div className="relative h-[220px] sm:h-[320px] lg:h-full rounded-2xl sm:rounded-3xl overflow-hidden bg-[#030406] border border-white/5">
+                        <div className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-all duration-700" style={{ backgroundImage: `url("${projects[1].image}")` }} />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#080a0f] via-transparent to-transparent" />
+                      </div>
+                    ) : (
+                      <div className="relative h-[220px] sm:h-[320px] lg:h-full rounded-2xl sm:rounded-3xl overflow-hidden bg-white/5 border border-white/5 flex items-center justify-center">
+                        <div className="w-24 h-24 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform duration-500">
+                           {projects[1].icon}
+                        </div>
+                      </div>
+                    )}
+                    
+                    <div className="flex flex-col justify-center py-3 sm:py-6 px-1 sm:px-2 lg:pr-6 pointer-events-auto h-full">
+                      <div className="flex flex-wrap gap-2 mb-4 sm:mb-6">
+                        {projects[1].tags.map((tag, tagIdx) => (
+                          <span key={tagIdx} className={`px-3 py-1 rounded-full border text-xs font-bold tracking-wider uppercase backdrop-blur-md font-sans ${tagIdx === 0 ? 'border-blue-500/30 text-blue-400 bg-blue-500/10' : 'border-white/10 text-gray-300 bg-white/5'}`}>
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                      
+                      <h3 className="text-2xl sm:text-3xl md:text-4xl font-display font-medium mb-3 sm:mb-4 text-white group-hover:text-blue-200 transition-colors">
+                        {projects[1].title}
+                      </h3>
+                      
+                      <p className="text-gray-400 text-base sm:text-lg leading-relaxed mb-6 sm:mb-8 font-sans font-light flex-grow">
+                        {projects[1].description}
+                      </p>
+                      
+                      <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-stretch sm:items-center mt-auto">
+                        <PhysicsButton
+                          to="/project/hids"
+                          hoverGlowColor="rgba(59, 130, 246, 0.4)"
+                          className="h-12 px-6 rounded-full bg-white text-black hover:bg-gray-200 shadow-lg transition-colors font-semibold tracking-wide flex items-center justify-center gap-2 cursor-hover"
+                        >
+                          View Details <ArrowUpRight size={18} />
+                        </PhysicsButton>
+
+                        {projects[1].githubUrl && (
+                          <PhysicsButton
+                            href={projects[1].githubUrl}
+                            target="_blank"
+                            hoverGlowColor="rgba(59, 130, 246, 0.3)"
+                            className="h-12 px-6 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 text-white shadow-lg transition-colors font-semibold tracking-wide flex items-center justify-center gap-2 cursor-hover"
+                          >
+                            <GithubIcon size={18} />
+                            <span>View on GitHub</span>
+                            <ArrowUpRight size={16} />
+                          </PhysicsButton>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </TiltCard>
+              </motion.div>
+            )}
+          </div>
+
+          {/* View All Projects Action */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="flex justify-center mt-10 sm:mt-14"
+          >
+            <PhysicsButton
+              to="/projects"
+              hoverGlowColor="rgba(59, 130, 246, 0.3)"
+              className="h-13 px-8 rounded-full bg-white/5 border border-white/10 hover:border-white/25 hover:bg-white/10 text-white shadow-xl transition-all font-semibold tracking-wide flex items-center justify-center gap-2.5 cursor-hover text-sm sm:text-base"
+            >
+              <span>View All Projects</span>
+              <ArrowUpRight size={18} />
+            </PhysicsButton>
           </motion.div>
         </section>
         {/* Core Competencies */}

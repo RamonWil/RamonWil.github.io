@@ -4,6 +4,7 @@ import TiltCard from '../components/TiltCard';
 import PhysicsButton from '../components/PhysicsButton';
 import { projects } from '../data/projects';
 import { ArrowUpRight } from 'lucide-react';
+import { GithubIcon } from '../components/Icons';
 
 export default function Projects() {
   return (
@@ -78,13 +79,29 @@ export default function Projects() {
                       {project.description}
                     </p>
                     
-                    <PhysicsButton
-                      {...(project.link.startsWith('http') ? { href: project.link, target: "_blank" } : { to: project.link })}
-                      hoverGlowColor="rgba(59, 130, 246, 0.4)"
-                      className="self-start h-11 sm:h-12 px-5 sm:px-6 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 text-white shadow-lg transition-colors font-semibold tracking-wide flex items-center gap-2 mt-auto text-xs sm:text-sm"
-                    >
-                      {project.id === 'sersuite' ? 'Visit Site' : 'View Details'} <ArrowUpRight size={16} />
-                    </PhysicsButton>
+                    <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 mt-auto">
+                      <PhysicsButton
+                        {...(project.link.startsWith('http') ? { href: project.link, target: "_blank" } : { to: project.link })}
+                        hoverGlowColor="rgba(59, 130, 246, 0.4)"
+                        className="self-start h-11 sm:h-12 px-5 sm:px-6 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 text-white shadow-lg transition-colors font-semibold tracking-wide flex items-center gap-2 text-xs sm:text-sm"
+                      >
+                        {project.id === 'sersuite' ? 'Visit Site' : 'View Details'} <ArrowUpRight size={16} />
+                      </PhysicsButton>
+
+                      {project.githubUrl && (
+                        <PhysicsButton
+                          href={project.githubUrl}
+                          target="_blank"
+                          hoverGlowColor="rgba(59, 130, 246, 0.4)"
+                          className="h-11 sm:h-12 px-4 sm:px-5 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 text-white shadow-lg transition-colors font-semibold tracking-wide flex items-center gap-2 text-xs sm:text-sm"
+                          title="View source on GitHub"
+                        >
+                          <GithubIcon size={16} />
+                          <span>GitHub</span>
+                          <ArrowUpRight size={14} />
+                        </PhysicsButton>
+                      )}
+                    </div>
                   </div>
                 </div>
               </TiltCard>

@@ -3,14 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, FileText, Mail, ArrowUpRight } from 'lucide-react';
 import Magnetic from '../Magnetic';
-
-const LinkedinIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-    <rect x="2" y="9" width="4" height="12"></rect>
-    <circle cx="4" cy="4" r="2"></circle>
-  </svg>
-);
+import { GithubIcon, LinkedinIcon } from '../Icons';
 
 export default function Navbar() {
   const location = useLocation();
@@ -119,6 +112,30 @@ export default function Navbar() {
 
           {/* Desktop Right Actions (>= lg) */}
           <div className="hidden lg:flex items-center gap-2.5">
+            <Magnetic strength={0.2}>
+              <a
+                href="https://github.com/RamonWil"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub Profile"
+                className="w-8 h-8 rounded-full border border-white/10 hover:border-white/25 hover:bg-white/5 flex items-center justify-center text-gray-300 hover:text-white transition-all cursor-hover"
+              >
+                <GithubIcon size={16} />
+              </a>
+            </Magnetic>
+
+            <Magnetic strength={0.2}>
+              <a
+                href="https://linkedin.com/in/itsramon-williams"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn Profile"
+                className="w-8 h-8 rounded-full border border-white/10 hover:border-white/25 hover:bg-white/5 flex items-center justify-center text-gray-300 hover:text-white transition-all cursor-hover"
+              >
+                <LinkedinIcon size={16} />
+              </a>
+            </Magnetic>
+
             <Magnetic strength={0.2}>
               <a
                 href="./assets/files/Public_Resume.pdf"
@@ -248,13 +265,22 @@ export default function Navbar() {
               {/* Social links row */}
               <div className="flex items-center justify-center gap-4 pt-3 mt-1 border-t border-white/10 text-gray-400">
                 <a
+                  href="https://github.com/RamonWil"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 hover:text-white transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
+                  aria-label="GitHub Profile"
+                >
+                  <GithubIcon size={18} />
+                </a>
+                <a
                   href="https://linkedin.com/in/itsramon-williams"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-2 hover:text-white transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
                   aria-label="LinkedIn Profile"
                 >
-                  <LinkedinIcon />
+                  <LinkedinIcon size={18} />
                 </a>
                 <span className="text-xs font-sans text-gray-500">
                   Ramon J. Williams &copy; {new Date().getFullYear()}
