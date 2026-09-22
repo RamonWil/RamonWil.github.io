@@ -86,7 +86,11 @@ export default function ProjectDetails() {
                 href={project.githubUrl}
                 target="_blank"
                 hoverGlowColor="rgba(59, 130, 246, 0.4)"
-                className="h-12 sm:h-14 px-6 sm:px-8 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white shadow-lg transition-all font-semibold tracking-wide flex items-center justify-center gap-2.5 text-sm sm:text-base cursor-hover"
+                className={`h-12 sm:h-14 px-6 sm:px-8 rounded-full shadow-lg transition-all font-semibold tracking-wide flex items-center justify-center gap-2.5 text-sm sm:text-base cursor-hover ${
+                  !isExternalLink
+                    ? 'bg-white text-black hover:bg-gray-200'
+                    : 'bg-white/10 hover:bg-white/20 border border-white/20 text-white'
+                }`}
               >
                 <GithubIcon size={18} />
                 <span>View on GitHub</span>
@@ -166,7 +170,7 @@ export default function ProjectDetails() {
                    >
                      <span className="flex items-center gap-2 truncate">
                        <GithubIcon size={16} />
-                       <span className="truncate">RamonWil/HIDS</span>
+                       <span className="truncate">{project.githubUrl.replace(/^https?:\/\/github\.com\//, '')}</span>
                      </span>
                      <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform flex-shrink-0" />
                    </a>

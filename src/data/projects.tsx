@@ -65,6 +65,7 @@ export const projects: ProjectData[] = [
     icon: <Brain className="w-8 h-8" />,
     image: "./assets/images/project-images/Ai Study Assistant/Intro.jpg",
     link: "/project/ai-study-assistant",
+    githubUrl: "https://github.com/RamonWil/Ai-Study-Assistant",
     featured: false,
     images: [
       {
